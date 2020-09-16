@@ -695,10 +695,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3ba2b4accaf594e922e5cde9e23607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  turnSpeed: 0
-  horizontalInput: 0
-  forwardInput: 0
 --- !u!1001 &233057931
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1295,7 +1291,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1889642369}
-  offset: {x: 0, y: 5, z: -10}
 --- !u!1001 &578002886
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4124,7 +4119,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -4140,10 +4135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3ba2b4accaf594e922e5cde9e23607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  turnSpeed: 0
-  horizontalInput: 0
-  forwardInput: 0
 --- !u!1001 &1894924559
 PrefabInstance:
   m_ObjectHideFlags: 0
