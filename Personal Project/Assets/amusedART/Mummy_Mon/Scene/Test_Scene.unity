@@ -1931,7 +1931,7 @@ MonoBehaviour:
   forwardInput: 0
   speed: 10
   turnSpeed: 100
-  mummy: {fileID: 0}
+  playerRotation: 0
 --- !u!1001 &1856205019
 PrefabInstance:
   m_ObjectHideFlags: 0
