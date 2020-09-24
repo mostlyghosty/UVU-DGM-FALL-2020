@@ -31,26 +31,40 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         forwardInput = Input.GetAxis("Vertical");
 
-        // If a button is pressed (if either input is not 0)
+        // If a direction button is pressed (if either input is not 0)
         if (forwardInput != 0 || horizontalInput != 0)
         {
             //find the target angle based on horizontalInput and ForwardInput and convert from radians to degrees (atan2 is in (y,x))
-            targetAngle = Mathf.Atan2(forwardInput, horizontalInput) * 180 / Mathf.PI + 180;
+            targetAngle = Mathf.Atan2(-forwardInput, horizontalInput) * 180 / Mathf.PI + 180;
 
-            //takes the Difference between the target angle and the player rotation with mod 360 (makes sure the answer is always between 0 & 360, takes full revolutions out)
-            diffAngle = (targetAngle - playerRotation) % 360;
+            //takes the Difference between the target angle and the player rotation with mod 360 (makes sure the answer is always between 0 & 360 (and not negative), takes full revolutions out)
+            diffAngle = Mathf.Min((targetAngle - playerRotation + 360) % 360, (playerRotation - targetAngle + 360) % 360);
+
 
             //If Target angle and Player rotation are different rotate until they are close
-            if (diffAngle > 10 || (360 - diffAngle) > 10)
+            if (diffAngle > 10)
             {
+               if (((targetAngle - playerRotation + 360) % 360) < ((playerRotation - targetAngle +360) % 360))
+               {
+                   transform.Rotate(Vector3.up * Time.deltaTime * turnSpeed);
+               }
 
+               else 
+               {
+                   transform.Rotate(Vector3.down * Time.deltaTime * turnSpeed);
+               }
+            }
+
+            // else go forward
+            else 
+            {
+                //Make rotation of character exact
+                transform.rotation = Quaternion.Euler(0, targetAngle, 0);
+
+                transform.Translate(Vector3.forward * Time.deltaTime * speed);
             }
 
         }
-
-        //transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
-
-        //transform.Rotate(Vector3.up* Time.deltaTime * turnSpeed * horizontalInput);
         
         // Starts and stops walking animation based on input
         if(horizontalInput != 0 || forwardInput != 0)
