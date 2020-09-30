@@ -4943,8 +4943,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2019306320698991263}
   - component: {fileID: 2019306320689301951}
+  - component: {fileID: -5093152254733002025}
+  - component: {fileID: -1828867123097946699}
   m_Layer: 0
-  m_Name: Dog_GermanShepherd_01
+  m_Name: GermanShepherdPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5020,6 +5022,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-5093152254733002025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019306320698780909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7c3fffdd346f91459d1af66c889d8e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBounds: 30
+--- !u!114 &-1828867123097946699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019306320698780909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ddede6e43763a4b9cf1d97274c900e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 40
 --- !u!1 &2019306320698781147
 GameObject:
   m_ObjectHideFlags: 0
