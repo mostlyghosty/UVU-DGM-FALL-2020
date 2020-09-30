@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space))
         {
+            Debug.Log ("Position spawned" + transform.position);
             Instantiate(projectile, transform.position, projectile.transform.rotation);
         }
     }
