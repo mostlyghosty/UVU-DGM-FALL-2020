@@ -251,6 +251,8 @@ MonoBehaviour:
   animalIndex: 1
   spawnRangeX: 20
   spawnPosZ: 20
+  startDelay: 2
+  spawnInterval: 1
 --- !u!4 &222914195
 Transform:
   m_ObjectHideFlags: 0

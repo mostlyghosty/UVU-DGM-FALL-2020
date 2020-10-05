@@ -4945,6 +4945,9 @@ GameObject:
   - component: {fileID: 2019306320689301951}
   - component: {fileID: -5093152254733002025}
   - component: {fileID: -1828867123097946699}
+  - component: {fileID: 3342504175107211466}
+  - component: {fileID: 3412392957799971581}
+  - component: {fileID: 223061835984236959}
   m_Layer: 0
   m_Name: GermanShepherdPrefab
   m_TagString: Untagged
@@ -5047,7 +5050,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ddede6e43763a4b9cf1d97274c900e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
+  speed: 10
+--- !u!65 &3342504175107211466
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019306320698780909}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.107086755, y: 0.23102398, z: 0.29241475}
+  m_Center: {x: -0.0011025429, y: 0.112690546, z: 0.032360125}
+--- !u!54 &3412392957799971581
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019306320698780909}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &223061835984236959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019306320698780909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 565d800b976b4eb4a955cad685a43eea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2019306320698781147
 GameObject:
   m_ObjectHideFlags: 0

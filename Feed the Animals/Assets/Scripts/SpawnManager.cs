@@ -12,12 +12,28 @@ public class SpawnManager : MonoBehaviour
     public float spawnRangeX = 20f;
     public float spawnPosZ = 20f;
 
+    public float startDelay;
+
+    public float spawnInterval;
+
+    void Start()
+    {
+        InvokeRepeating("SpawnRandomAnimals", startDelay, spawnInterval);
+    }
+    
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.S))
-        {
-            //randomly generate animals at a random location
+        // if(Input.GetKeyDown(KeyCode.S))
+        // {
+        //   SpawnRandomAnimals(); 
+        // }
+    }
+
+    //void means it's not going to return any values
+    void SpawnRandomAnimals()
+    {
+         //randomly generate animals at a random location
             Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX,spawnRangeX), 0, spawnPosZ);
 
             //Randomly selcts a value from the array
@@ -25,6 +41,5 @@ public class SpawnManager : MonoBehaviour
 
             //creates an instance of one of our animals
             Instantiate(animalPrefabs[animalIndex], spawnPos, animalPrefabs[animalIndex].transform.rotation);
-        }
     }
 }
