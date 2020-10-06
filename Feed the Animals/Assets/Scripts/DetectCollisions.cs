@@ -4,21 +4,13 @@ using UnityEngine;
 
 public class DetectCollisions : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    //detects collisions between colliders
     void OnTriggerEnter(Collider other)
     {
+        //destroys th object this script is on
         Destroy(gameObject);
+
+        //destroys the colliding object
         Destroy(other.gameObject);
     }
 }

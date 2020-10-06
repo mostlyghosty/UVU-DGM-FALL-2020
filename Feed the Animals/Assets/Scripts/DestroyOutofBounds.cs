@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class DestroyOutofBounds : MonoBehaviour
 {
-    public float topBounds = 30f;
+    private float topBounds = 30f;
     private float lowerBounds = -15f;
     
+    //initializes the scale of time
     void Awake()
     {
         Time.timeScale = 1;
     }
+
     // Update is called once per frame
     void Update()
     {   

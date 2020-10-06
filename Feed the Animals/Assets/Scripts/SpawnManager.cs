@@ -9,31 +9,23 @@ public class SpawnManager : MonoBehaviour
 
     //this points to a part of the array
     public int animalIndex;
-    public float spawnRangeX = 20f;
-    public float spawnPosZ = 20f;
+    private float spawnRangeX = 15f;
+    private float spawnPosZ = 15f;
 
     public float startDelay;
 
     public float spawnInterval;
 
+    //calls to the function SpawRandomAnimals and runs the code at regular intervals
     void Start()
     {
         InvokeRepeating("SpawnRandomAnimals", startDelay, spawnInterval);
-    }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        // if(Input.GetKeyDown(KeyCode.S))
-        // {
-        //   SpawnRandomAnimals(); 
-        // }
     }
 
     //void means it's not going to return any values
     void SpawnRandomAnimals()
     {
-         //randomly generate animals at a random location
+             //randomly generate animals at a random location
             Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX,spawnRangeX), 0, spawnPosZ);
 
             //Randomly selcts a value from the array

@@ -4,26 +4,23 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float horizontalInput;
-    public float moveSpeed = 10f;
+    private float horizontalInput;
+    private float moveSpeed = 20f;
 
-    public float xRange = 10;
+    private float xRange = 18;
 
     public GameObject projectile;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
+        //Gets the horizontal input
         horizontalInput = Input.GetAxis("Horizontal"); 
 
+        //Moves player back and forth based on horizontal input
         transform.Translate(Vector3.right * Time.deltaTime * moveSpeed * horizontalInput);
 
+        //If player leaves play area reset position back in play
         if(transform.position.x < -xRange)
         {
             transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
@@ -34,6 +31,7 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
 
+        //Creates instance of a projectile when space is pressed
         if(Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(projectile, transform.position, projectile.transform.rotation);

@@ -249,10 +249,8 @@ MonoBehaviour:
   - {fileID: 7269757039330137628, guid: b885628d12627d34d990b57839f863de, type: 3}
   - {fileID: 2019306320698780909, guid: 4f13f0c8daf38544c9cad065c40002c9, type: 3}
   animalIndex: 1
-  spawnRangeX: 20
-  spawnPosZ: 20
   startDelay: 2
-  spawnInterval: 1
+  spawnInterval: 0.75
 --- !u!4 &222914195
 Transform:
   m_ObjectHideFlags: 0
@@ -285,9 +283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7245c6cd682118a418abfedb7a392d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalInput: 0
-  moveSpeed: 10
-  xRange: 10
   projectile: {fileID: 2315431872130936757, guid: c5ef769ba7462c64681da46f31e1105a,
     type: 3}
 --- !u!1 &425805626
