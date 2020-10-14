@@ -7,14 +7,23 @@ public class DetectCollisions : MonoBehaviour
    private GameObject puzzlePiece;
    public string item;
 
-   
+   public Inventory sendToInventory;
+
+   private int counter;
+
+    void Start ()
+    {
+        counter = 0;
+    }
     void Update()
     {
         if(puzzlePiece != null && Input.GetKeyDown(KeyCode.E))
         {
-            
-            Debug.Log(item);
+
+            sendToInventory.inventoryItems[counter] = item;
             Destroy(puzzlePiece);
+
+            counter += 1;
             
         }
     }

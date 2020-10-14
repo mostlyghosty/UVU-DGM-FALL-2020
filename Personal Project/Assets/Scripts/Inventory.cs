@@ -12,6 +12,8 @@ public class Inventory : MonoBehaviour
 
     public GameObject slotHolder;
 
+    public string[] inventoryItems;
+
     void Start()
     {
         // makes sure inventory isn't active and initializes time scale
@@ -21,6 +23,8 @@ public class Inventory : MonoBehaviour
         //sets the number of slots in the allSlots array
         allSlots = 9;
         slot = new GameObject[allSlots];
+
+        inventoryItems = new string[10];
     
     }
     void Update()

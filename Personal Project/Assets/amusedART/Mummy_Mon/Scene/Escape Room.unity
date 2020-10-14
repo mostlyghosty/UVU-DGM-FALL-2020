@@ -9657,6 +9657,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
+--- !u!1 &1397024465 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 841dea7c1af249d4eb71eab6d1f88285,
+    type: 3}
+  m_PrefabInstance: {fileID: 1862293688}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1397024470
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397024465}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0927815, y: 1.0387576, z: 1.5147363}
+  m_Center: {x: -0.13763356, y: -0.063203365, z: 0.5082607}
 --- !u!1 &1399267911
 GameObject:
   m_ObjectHideFlags: 0
@@ -12488,6 +12507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: 
+  sendToInventory: {fileID: 1839654044}
 --- !u!65 &1839654042
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12515,6 +12535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 1340010839}
   slotHolder: {fileID: 245935826}
+  inventoryItems: []
 --- !u!1001 &1841724096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12750,7 +12771,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 841dea7c1af249d4eb71eab6d1f88285, type: 3}
       propertyPath: m_Name
-      value: mobile_spokebone_02
+      value: Bone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 841dea7c1af249d4eb71eab6d1f88285, type: 3}
       propertyPath: m_LocalPosition.x
