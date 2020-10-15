@@ -20,6 +20,7 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if the player moves in a way that moves the camera out of bounds, put it back in bounds
         if (player.transform.position.x < -25)
         {
            transform.position = new Vector3(-45, (player.transform.position.y + 5), player.transform.position.z);

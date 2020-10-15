@@ -1,35 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    private bool inventoryEnabled;
+    private bool inventoryEnabled = false;
     public GameObject inventory;
+    public Text[] slots;
 
-    private int allSlots;
-    private GameObject [] slot;
-
-    public GameObject slotHolder;
-
-    public string[] inventoryItems;
-
+    void Awake()
+    {
+        //Initializes time scale
+        Time.timeScale = 1;
+    }
     void Start()
     {
-        // makes sure inventory isn't active and initializes time scale
+        // makes sure inventory isn't active
         inventory.SetActive(false);
-        Time.timeScale = 1;
-
-        //sets the number of slots in the allSlots array
-        allSlots = 9;
-        slot = new GameObject[allSlots];
-
-        inventoryItems = new string[10];
-    
     }
     void Update()
     {
-        //if left shift is pressed activate or deactivate inventory ui
+        //if tab is pressed activate or deactivate inventory ui
         if(Input.GetKeyDown(KeyCode.Tab))
         {
             inventoryEnabled = !inventoryEnabled;
