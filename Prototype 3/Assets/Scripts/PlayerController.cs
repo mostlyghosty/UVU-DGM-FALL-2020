@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
 
     public bool isGrounded = true;
 
+    public bool gameOver = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +38,17 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        isGrounded = true;
+        if(other.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+
+        else if (other.gameObject.CompareTag("Obstacle"))
+        {
+            gameOver = true;
+            Debug.Log("Game Over");
+        }
     }
+
+
 }
