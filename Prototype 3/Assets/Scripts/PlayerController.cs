@@ -12,12 +12,16 @@ public class PlayerController : MonoBehaviour
 
     public bool gameOver = false;
 
+    private Animator playerAnim;
+
 
     // Start is called before the first frame update
     void Start()
     {
         //Stores the rigidbody component in the variable playerRB
         playerRB = GetComponent<Rigidbody>();
+
+        playerAnim = GetComponent<Animator>();
 
         // *= is a = a * b (keeps the value in a without replacing it)
         Physics.gravity *= gravityMod;
@@ -28,11 +32,13 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // == is a comparison
-        if(Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
+        if(Input.GetKeyDown(KeyCode.Space) && isGrounded == true && !gameOver)
         {
+            isGrounded = false;
             //adds momentum in a direction (posititve y)
             playerRB.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            isGrounded = false;
+            //Triggers the Jump animation
+            playerAnim.SetTrigger("Jump_trig");
         }
     }
 
@@ -47,6 +53,8 @@ public class PlayerController : MonoBehaviour
         {
             gameOver = true;
             Debug.Log("Game Over");
+            playerAnim.SetBool("Death_b", true);
+            playerAnim.SetInteger("DeathType_int", 1);
         }
     }
 
