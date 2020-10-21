@@ -20,7 +20,7 @@ public class DetectCollisions : MonoBehaviour
     void Update()
     {
         //if you are still near the object and e is pressed
-        if(puzzlePiece != null && Input.GetKeyDown(KeyCode.E))
+        if(puzzlePiece != null && Input.GetKeyDown(KeyCode.E) && puzzlePiece.gameObject.CompareTag("Puzzle Piece"))
         {
             //sends the object to the inventory script
             sendToInventory.slots[counter].text = item;
