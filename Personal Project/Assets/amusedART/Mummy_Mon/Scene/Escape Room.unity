@@ -6848,7 +6848,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: dab5f64d42c54534580bede6fa6c9cda, type: 3}
       propertyPath: m_Name
-      value: spiderweb_01
+      value: Spider Web
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: dab5f64d42c54534580bede6fa6c9cda, type: 3}
       propertyPath: m_TagString
@@ -13472,6 +13472,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   sendToInventory: {fileID: 1839654044}
+  sendToDialogue: {fileID: 1839654041}
+--- !u!114 &1839654041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839654037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15ed31a3395082f42aecf46d14e5768f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setPiece: 
+  dialogue: {fileID: 600860811}
+  ePress: 0
 --- !u!65 &1839654042
 BoxCollider:
   m_ObjectHideFlags: 0

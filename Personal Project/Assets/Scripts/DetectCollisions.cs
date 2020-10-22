@@ -10,6 +10,8 @@ public class DetectCollisions : MonoBehaviour
 
    public Inventory sendToInventory;
 
+   public Dialogue sendToDialogue;
+
    private int counter;
 
     void Start ()
@@ -24,12 +26,21 @@ public class DetectCollisions : MonoBehaviour
         {
             //sends the object to the inventory script
             sendToInventory.slots[counter].text = item;
+            sendToDialogue.setPiece = item;
+            sendToDialogue.ePress = true;
             Destroy(puzzlePiece);
 
             //moves to the next empty space in the slots array in the inventory script
             counter += 1;
-            
         }
+
+        else if(puzzlePiece != null && Input.GetKeyDown(KeyCode.E))
+        {
+            sendToDialogue.setPiece = item;
+            sendToDialogue.ePress = true;
+        }
+
+
     }
 
     //If collision is entered sends the object collided with to an empty game object and gets the name and sends it to a text string
