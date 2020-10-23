@@ -14,18 +14,21 @@ public class Inventory : MonoBehaviour
         //Initializes time scale
         Time.timeScale = 1;
     }
+
     void Start()
     {
         // makes sure inventory isn't active
         inventory.SetActive(false);
     }
+
     void Update()
     {
-        //if tab is pressed activate or deactivate inventory ui
+        //if tab is pressed activate or deactivate inventory ui depending on the Inventory enabled bool
         if(Input.GetKeyDown(KeyCode.Tab))
         {
             inventoryEnabled = !inventoryEnabled;
 
+            //Time scale freezes time while the inventory is active so the player can't move
             if (inventoryEnabled == true)
             {
                 Time.timeScale = 0;

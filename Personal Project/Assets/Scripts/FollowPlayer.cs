@@ -26,6 +26,7 @@ public class FollowPlayer : MonoBehaviour
            transform.position = new Vector3(-45, (player.transform.position.y + 5), player.transform.position.z);
         }
 
+        //if the camera is inbounds follows the player at a set distance
         else
         {
             transform.position = player.transform.position + offset;

@@ -16,9 +16,10 @@ public class DetectCollisions : MonoBehaviour
 
     void Start ()
     {
-        //Initializes the counter
+        //Initializes the counter for the slot array
         counter = 0;
     }
+
     void Update()
     {
         //if you are still near the object and e is pressed
@@ -26,6 +27,8 @@ public class DetectCollisions : MonoBehaviour
         {
             //sends the object to the inventory script
             sendToInventory.slots[counter].text = item;
+
+            //Also sends information about the item to dialogue script
             sendToDialogue.setPiece = item;
             sendToDialogue.ePress = true;
             Destroy(puzzlePiece);
@@ -36,6 +39,7 @@ public class DetectCollisions : MonoBehaviour
 
         else if(puzzlePiece != null && Input.GetKeyDown(KeyCode.E))
         {
+            //Sends information about the item to dialogue script
             sendToDialogue.setPiece = item;
             sendToDialogue.ePress = true;
         }

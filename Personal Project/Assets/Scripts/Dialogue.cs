@@ -36,7 +36,7 @@ public class Dialogue : MonoBehaviour
             dialogue.text = setPiece;
         }
 
-        //Once the ime runs out reset everything
+        //Once the time runs out reset everything
         if(timer < 0)
         {
             ePress = false;
