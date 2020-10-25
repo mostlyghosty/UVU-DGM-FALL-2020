@@ -15,16 +15,23 @@ public class Dialogue : MonoBehaviour
 
     public bool ePress = false;
 
+    private bool startGame = true;
+
     private static Dictionary<string, string> dialogue = new Dictionary<string, string>
         {
-            {"Knife", "It's Rusty." }
+            {"Start", "If I don't want to be stuck in this temple forever, I'd better look for a way to escape"},
+            {"Knife", "It's still as sharp as a ... well, a knife."},
+            {"Bone", "Dusty, just like I am"},
+            {"Ancient Note", "Hmm, all the pages in these books are blank, except one. I don't recognize the language though."},
+            {"Strange Gem", "There's something shiny at the bottom but I can reach it with my stubby arms."},
+            {"Spider Web", "It's too sticky to touch. I'll need something to cut it down with."}
         };
 
     // Start is called before the first frame update
     void Start()
     {
         //Initializes the timer function
-        time = 3f;
+        time = 5f;
         timer = time;
     }
 
@@ -32,6 +39,12 @@ public class Dialogue : MonoBehaviour
     void Update()
     {
         
+        if(startGame)
+        {
+            timer -= Time.deltaTime;
+            dialogueBox.text = dialogue["Start"];
+        }
+
         //if the setPiece has text in it from detect collisions and detect collisions detected an E Key Press
         if(setPiece != null && ePress == true)
         {   
@@ -47,6 +60,7 @@ public class Dialogue : MonoBehaviour
             ePress = false;
             setPiece = null;
             dialogueBox.text = null;
+            startGame = false;
             timer = time;
         }
 
