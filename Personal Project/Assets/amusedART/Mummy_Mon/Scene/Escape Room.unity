@@ -4800,7 +4800,7 @@ GameObject:
   - component: {fileID: 600860811}
   - component: {fileID: 600860813}
   m_Layer: 5
-  m_Name: Dialogue
+  m_Name: ' Dialogue Box'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13486,7 +13486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   setPiece: 
-  dialogue: {fileID: 600860811}
+  dialogueBox: {fileID: 600860811}
   ePress: 0
 --- !u!65 &1839654042
 BoxCollider:
