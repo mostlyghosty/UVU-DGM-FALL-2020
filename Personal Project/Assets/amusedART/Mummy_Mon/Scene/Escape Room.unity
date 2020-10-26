@@ -5546,7 +5546,7 @@ GameObject:
   - component: {fileID: 686980765}
   m_Layer: 0
   m_Name: Strange Gem
-  m_TagString: Untagged
+  m_TagString: Secondary Puzzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

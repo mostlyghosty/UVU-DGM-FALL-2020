@@ -27,6 +27,12 @@ public class Dialogue : MonoBehaviour
             {"Spider Web", "It's too sticky to touch. I'll need something to cut it down with."}
         };
 
+    private static Dictionary<string, string> secondDialogue = new Dictionary<string, string>
+        {
+            {"Strange Gem", "It makes pretty patterns when I look through it."},
+            {"Spider Web", "It's... stringy."}
+        }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +51,14 @@ public class Dialogue : MonoBehaviour
             dialogueBox.text = dialogue["Start"];
         }
 
+       /* if (setPiece != null && ePress == true && Item is in inventory)
+       {
+           timer -= Time.deltaTime;
+           dialogueBox.text = secondDialogue[setPiece];
+       }*/
+
         //if the setPiece has text in it from detect collisions and detect collisions detected an E Key Press
+        /*should be else for secondary dialogue*/
         if(setPiece != null && ePress == true)
         {   
             //Start timer
