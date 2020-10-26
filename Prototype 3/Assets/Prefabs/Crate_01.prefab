@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6126850551624575145}
   - component: {fileID: 6126850551621133415}
   - component: {fileID: 6126850551622185765}
-  - component: {fileID: 6126850552382988482}
   - component: {fileID: -1967447399768917473}
+  - component: {fileID: 4793751793051381524}
   m_Layer: 0
   m_Name: Crate_01
   m_TagString: Obstacle
@@ -83,19 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6126850552382988482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6126850551624356925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e5e97faa70423346b3081de0a61708b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
 --- !u!65 &-1967447399768917473
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -109,3 +96,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.554324, y: 1.5543231, z: 1.5543228}
   m_Center: {x: 0, y: 0.77716154, z: 0}
+--- !u!114 &4793751793051381524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6126850551624356925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fec315f9b182d94fbd07f6f54eaa4b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
