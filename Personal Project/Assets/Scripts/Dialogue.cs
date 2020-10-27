@@ -5,17 +5,22 @@ using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
+    //text dialogue
     public string setPiece;
-
     public Text dialogueBox;
 
+    //Timer
     private float time;
-
     private float timer;
 
+    //bools to set states
     public bool ePress = false;
-
     private bool startGame = true;
+
+    //SFX
+    public AudioClip[] voiceClips;
+
+    private AudioSource playerAudio;
 
     private static Dictionary<string, string> dialogue = new Dictionary<string, string>
         {
@@ -31,7 +36,7 @@ public class Dialogue : MonoBehaviour
         {
             {"Strange Gem", "It makes pretty patterns when I look through it."},
             {"Spider Web", "It's... stringy."}
-        }
+        };
 
     // Start is called before the first frame update
     void Start()
@@ -39,15 +44,20 @@ public class Dialogue : MonoBehaviour
         //Initializes the timer function
         time = 5f;
         timer = time;
+
+        playerAudio = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        timer -= Time.deltaTime;
+
         if(startGame)
         {
-            timer -= Time.deltaTime;
+            startGame = false;
+            Invoke("RandomSoundGenerator", 0);
             dialogueBox.text = dialogue["Start"];
         }
 
@@ -61,22 +71,25 @@ public class Dialogue : MonoBehaviour
         /*should be else for secondary dialogue*/
         if(setPiece != null && ePress == true)
         {   
-            //Start timer
-            timer -= Time.deltaTime;
-            //Send dialogue to the dialoguebox (setPiece is temporary place holder)
+            ePress = false;
+            Invoke("RandomSoundGenerator", 0);
+            //Send dialogue to the dialoguebox
             dialogueBox.text = dialogue[setPiece];
         }
 
         //Once the time runs out reset everything
         if(timer < 0)
         {
-            ePress = false;
             setPiece = null;
             dialogueBox.text = null;
-            startGame = false;
             timer = time;
         }
 
+    }
+
+    void RandomSoundGenerator()
+    {
+        playerAudio.PlayOneShot(voiceClips[Random.Range(0, voiceClips.Length)], 1.0f);
     }
 
     

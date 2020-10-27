@@ -14,16 +14,25 @@ public class DetectCollisions : MonoBehaviour
 
    private int counter;
 
+   private float time;
+
+   private float timer;
+
     void Start ()
     {
         //Initializes the counter for the slot array
         counter = 0;
+
+        time = 2f;
+        timer = time;
     }
 
     void Update()
     {
+        timer -= Time.deltaTime;
+
         //if you are still near the object and e is pressed
-        if(puzzlePiece != null && Input.GetKeyDown(KeyCode.E) && puzzlePiece.gameObject.CompareTag("Puzzle Piece"))
+        if(puzzlePiece != null && Input.GetKeyDown(KeyCode.E) && puzzlePiece.gameObject.CompareTag("Puzzle Piece") && timer < 0)
         {
             //sends the object to the inventory script
             sendToInventory.slots[counter].text = item;
@@ -31,17 +40,21 @@ public class DetectCollisions : MonoBehaviour
             //Also sends information about the item to dialogue script
             sendToDialogue.setPiece = item;
             sendToDialogue.ePress = true;
+
             Destroy(puzzlePiece);
 
             //moves to the next empty space in the slots array in the inventory script
             counter += 1;
+            timer = time;
         }
 
-        else if(puzzlePiece != null && Input.GetKeyDown(KeyCode.E))
+        else if(puzzlePiece != null && Input.GetKeyDown(KeyCode.E) && timer < 0)
         {
             //Sends information about the item to dialogue script
             sendToDialogue.setPiece = item;
             sendToDialogue.ePress = true;
+
+            timer = time;
         }
 
 
