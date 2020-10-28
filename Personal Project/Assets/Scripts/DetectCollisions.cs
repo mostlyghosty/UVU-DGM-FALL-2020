@@ -40,6 +40,7 @@ public class DetectCollisions : MonoBehaviour
             //Also sends information about the item to dialogue script
             sendToDialogue.setPiece = item;
             sendToDialogue.ePress = true;
+            sendToDialogue.puzzlePiece = puzzlePiece;
 
             Destroy(puzzlePiece);
 

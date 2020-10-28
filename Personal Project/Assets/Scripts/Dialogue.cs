@@ -8,6 +8,7 @@ public class Dialogue : MonoBehaviour
     //text dialogue
     public string setPiece;
     public Text dialogueBox;
+    public GameObject puzzlePiece;
 
     //Timer
     private float time;
@@ -22,6 +23,7 @@ public class Dialogue : MonoBehaviour
 
     private AudioSource playerAudio;
 
+    public AudioClip pickUp;
     private static Dictionary<string, string> dialogue = new Dictionary<string, string>
         {
             {"Start", "If I don't want to be stuck in this temple forever, I'd better look for a way to escape"},
@@ -85,6 +87,12 @@ public class Dialogue : MonoBehaviour
         {   
             ePress = false;
             timer = time;
+
+            if (puzzlePiece != null && puzzlePiece.gameObject.CompareTag("Puzzle Piece"))
+            {
+                playerAudio.PlayOneShot(pickUp, 0.3f);
+            } 
+            
             Invoke("RandomSoundGenerator", 0);
             //Send dialogue to the dialoguebox
             dialogueBox.text = dialogue[setPiece];
