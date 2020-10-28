@@ -29,20 +29,31 @@ public class Dialogue : MonoBehaviour
             {"Bone", "Dusty, just like I am"},
             {"Ancient Note", "Hmm, all the pages in these books are blank, except one. I don't recognize the language though."},
             {"Strange Gem", "There's something shiny at the bottom but I can reach it with my stubby arms."},
-            {"Spider Web", "It's too sticky to touch. I'll need something to cut it down with."}
+            {"Spider Web", "It's too sticky to touch. I'll need something to cut it down with."},
+            {"Jars", "Filled with darkness."},
+            {"Broken Boxes", "They'll fall apart if I touch them and I don't want splinters."},
+            {"Table", "Just some old jars."},
+            {"Bucket", "It's got too many holes in it to hold anything."},
+            {"Skulls", "Alas, poor Yorrick... or something like that anyway."},
+            {"Crates", "Empty, Empty, Empty, and Empty."},
+            {"Sack", "Just sand in here."},
+            {"Altar", "It says 'To leave the world you know far behind, light the altar in due time.'"},
+            {"Cubes", "I was never one for stonework."},
+            {"Secret", "It's a secret to everyone."}
         };
 
     private static Dictionary<string, string> secondDialogue = new Dictionary<string, string>
         {
             {"Strange Gem", "It makes pretty patterns when I look through it."},
-            {"Spider Web", "It's... stringy."}
+            {"Spider Web", "It's... stringy."},
+            {"Altar", "The words changed! It says 'May the light of the altar guide your path.'"}
         };
 
     // Start is called before the first frame update
     void Start()
     {
         //Initializes the timer function
-        time = 5f;
+        time = 4f;
         timer = time;
 
         playerAudio = GetComponent<AudioSource>();
@@ -57,6 +68,7 @@ public class Dialogue : MonoBehaviour
         if(startGame)
         {
             startGame = false;
+            timer = time;
             Invoke("RandomSoundGenerator", 0);
             dialogueBox.text = dialogue["Start"];
         }
@@ -72,6 +84,7 @@ public class Dialogue : MonoBehaviour
         if(setPiece != null && ePress == true)
         {   
             ePress = false;
+            timer = time;
             Invoke("RandomSoundGenerator", 0);
             //Send dialogue to the dialoguebox
             dialogueBox.text = dialogue[setPiece];
@@ -80,7 +93,6 @@ public class Dialogue : MonoBehaviour
         //Once the time runs out reset everything
         if(timer < 0)
         {
-            setPiece = null;
             dialogueBox.text = null;
             timer = time;
         }

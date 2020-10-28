@@ -426,6 +426,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 2.0000074, z: 2.0000072}
   m_Center: {x: -0.0000008940697, y: 1.3552527e-20, z: -0.000000059604645}
+--- !u!65 &53858950
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53858945}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.263419, y: 2.0000074, z: 4.4174724}
+  m_Center: {x: 0.06702857, y: -4.7392266e-14, z: 1.2087337}
 --- !u!1 &73372659 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000013296790728, guid: 03b0ed4871f8e8d46aab17cd9b867655,
@@ -2840,7 +2853,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1315125114229348, guid: 4c1686a5131ac8b45bfe913f509289c0, type: 3}
       propertyPath: m_Name
-      value: rpgpp_lt_table_01
+      value: Table
       objectReference: {fileID: 0}
     - target: {fileID: 4750229036844788, guid: 4c1686a5131ac8b45bfe913f509289c0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3187,7 +3200,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1487814745907178, guid: 05723fa5edef5fa4ab72eb90ae0bf7b0, type: 3}
       propertyPath: m_Name
-      value: rpgpp_lt_bucket_01
+      value: Bucket
       objectReference: {fileID: 0}
     - target: {fileID: 4380562535923756, guid: 05723fa5edef5fa4ab72eb90ae0bf7b0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3957,7 +3970,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000013610429706, guid: e4b6dc71c54fb9546ab4675a4c0f3a56, type: 3}
       propertyPath: m_Name
-      value: Single Cube 10
+      value: Cubes
       objectReference: {fileID: 0}
     - target: {fileID: 4000013591645226, guid: e4b6dc71c54fb9546ab4675a4c0f3a56, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4641,7 +4654,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1678841851965742, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
       propertyPath: m_Name
-      value: rpgpp_lt_box_wood_01
+      value: Crates
       objectReference: {fileID: 0}
     - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5397,11 +5410,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632015194}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.35466784, y: 0.49141145, z: 0.35466784}
-  m_Center: {x: -0.000000014901161, y: 0.24570566, z: 0.00000016391277}
+  m_Size: {x: 0.7040768, y: 0.49141136, z: 1.2135884}
+  m_Center: {x: -0.174705, y: 0.2457056, z: -0.018752264}
 --- !u!1001 &636974291
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5670,6 +5683,7 @@ GameObject:
   m_Component:
   - component: {fileID: 686980764}
   - component: {fileID: 686980765}
+  - component: {fileID: 686980766}
   m_Layer: 0
   m_Name: Strange Gem
   m_TagString: Secondary Puzzle
@@ -5702,8 +5716,21 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 17.279917, y: 9.222382, z: 20.439983}
-  m_Center: {x: -2.1979933, y: 4.111191, z: -0.4605236}
+  m_Size: {x: 17.52084, y: 9.222382, z: 14.77993}
+  m_Center: {x: -2.3184538, y: 4.111191, z: -3.2905502}
+--- !u!65 &686980766
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686980763}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.165122, y: 9.395531, z: 6.4036064}
+  m_Center: {x: 0.9192414, y: 4.1977654, z: 7.264742}
 --- !u!1001 &688145331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5713,7 +5740,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1678841851965742, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
       propertyPath: m_Name
-      value: rpgpp_lt_box_wood_01 (4)
+      value: Broken Boxes
       objectReference: {fileID: 0}
     - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6426,6 +6453,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.92379564, y: 0.8136058, z: 1.1716423}
   m_Center: {x: -0.0026062876, y: -0.0029441565, z: 0.0008839667}
+--- !u!65 &794247179
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794247174}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9808466, y: 0.8136062, z: 1.8545675}
+  m_Center: {x: -0.53113085, y: -0.0029441565, z: -0.34057623}
 --- !u!1001 &813845145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8026,7 +8066,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1895291820950270, guid: 645e0ccb96eef934aa12bd4c02a4bd66, type: 3}
       propertyPath: m_Name
-      value: rpgpp_lt_vase_02 (1)
+      value: Jars
       objectReference: {fileID: 0}
     - target: {fileID: 4032784818553696, guid: 645e0ccb96eef934aa12bd4c02a4bd66, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9757,8 +9797,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.35466787, y: 0.49141148, z: 0.35466787}
-  m_Center: {x: 0.000000014901161, y: 0.24570568, z: -0.000000074505806}
+  m_Size: {x: 0.63838416, y: 0.49141148, z: 0.57655156}
+  m_Center: {x: 0.07705169, y: 0.24570566, z: 0.11094149}
+--- !u!65 &1276710620
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276710614}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5749989, y: 0.49141148, z: 0.7704427}
+  m_Center: {x: 0.11016549, y: 0.24570566, z: 0.20788717}
 --- !u!1 &1277632071
 GameObject:
   m_ObjectHideFlags: 0
@@ -9978,41 +10031,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f93d4ac05e888d74995965bf814bc3d1, type: 3}
---- !u!1 &1302788803 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1266262423161834, guid: f274f0fb5e5bc294ca9a0ff4cf1f0ff7,
-    type: 3}
-  m_PrefabInstance: {fileID: 1146404331}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1302788807
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1302788803}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &1302788808
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1302788803}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.81495786, y: 0.51387465, z: 1.6494852}
-  m_Center: {x: 0.061606422, y: 0.030801332, z: 0.8247426}
 --- !u!1001 &1307343544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10253,7 +10271,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000011287716172, guid: 7464a7afeb57b4d489194ea2d9829054, type: 3}
       propertyPath: m_Name
-      value: Blocks And Bricks 20 One Sided
+      value: Altar
       objectReference: {fileID: 0}
     - target: {fileID: 4000013038965546, guid: 7464a7afeb57b4d489194ea2d9829054, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10726,8 +10744,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0927815, y: 1.0387576, z: 1.5147363}
-  m_Center: {x: -0.13763356, y: -0.063203365, z: 0.5082607}
+  m_Size: {x: 1.0927815, y: 1.0387576, z: 1.0334271}
+  m_Center: {x: -0.13763349, y: -0.06320337, z: 0.26760587}
 --- !u!1 &1399267911
 GameObject:
   m_ObjectHideFlags: 0
@@ -11057,6 +11075,50 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 16, y: 0.000060180842, z: 15.999998}
   m_Center: {x: 0, y: -0.0000003596124, z: 1.7261458e-12}
+--- !u!1 &1468894822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1468894824}
+  - component: {fileID: 1468894823}
+  m_Layer: 0
+  m_Name: Secret
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1468894823
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468894822}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1468894824
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468894822}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.972669, y: 0.501, z: -4.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 35
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1486945254 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1895291820950270, guid: 645e0ccb96eef934aa12bd4c02a4bd66,
@@ -12287,8 +12349,8 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 567467957}
   m_PrefabAsset: {fileID: 0}
---- !u!135 &1665170745
-SphereCollider:
+--- !u!65 &1665170745
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -12298,8 +12360,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.1990392
-  m_Center: {x: 0.75968313, y: -0.5746373, z: 0}
+  m_Size: {x: 1.8638927, y: 1.3417974, z: 0.84826994}
+  m_Center: {x: 0.43194625, y: -0.17089863, z: 0.075865075}
 --- !u!1 &1681114431
 GameObject:
   m_ObjectHideFlags: 0
@@ -12823,6 +12885,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 6330f18c8aa8fdf4aaff055f67a6f3cd, type: 3}
+--- !u!65 &1768325529
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768325524}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15.999998, y: 10.000006, z: 8.317531}
+  m_Center: {x: 0, y: 5.000001, z: 3.1587594}
 --- !u!1001 &1769319916
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13378,7 +13453,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1895291820950270, guid: 645e0ccb96eef934aa12bd4c02a4bd66, type: 3}
       propertyPath: m_Name
-      value: rpgpp_lt_vase_02
+      value: Sack
       objectReference: {fileID: 0}
     - target: {fileID: 4032784818553696, guid: 645e0ccb96eef934aa12bd4c02a4bd66, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13536,6 +13611,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5619338, y: 0.71901566, z: 0.62310356}
   m_Center: {x: 0.0019418745, y: 0.35724428, z: 0.009753882}
+--- !u!65 &1815616518
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815616512}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3972299, y: 1.020115, z: 1.2036886}
+  m_Center: {x: -0.41570616, y: 0.50779396, z: 0.3000464}
 --- !u!1001 &1819138842
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14455,6 +14543,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.7080266, y: 0.9538094, z: 1.5732085}
   m_Center: {x: -0.062272258, y: 0.47690445, z: -0.04456855}
+--- !u!65 &1885834364
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885834360}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2624321, y: 0.95380974, z: 2.3856514}
+  m_Center: {x: 0.6605232, y: 0.47690463, z: -0.45078096}
 --- !u!1 &1886328652 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000011145740162, guid: d98c8a68f8a40ba4ea6133302529ede3,
@@ -14508,8 +14609,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.72786105, y: 0.31456637, z: 0.6437697}
-  m_Center: {x: -0.050038286, y: 0.13101366, z: 0.0014665285}
+  m_Size: {x: 0.72786105, y: 0.910883, z: 0.9054333}
+  m_Center: {x: -0.0500383, y: 0.42917463, z: -0.12936513}
 --- !u!54 &1888736967
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14526,6 +14627,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &1888736968
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888736961}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.133375, y: 0.31456634, z: 0.6437698}
+  m_Center: {x: -0.25279528, y: 0.13101366, z: 0.0014665289}
 --- !u!1001 &1890605560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15215,20 +15329,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &1986691577
-MeshCollider:
+--- !u!65 &1986691577
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1986691573}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: ab945ff7c1d59bb4a8b506cb8c7dafcd, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 2.5338109, y: 0.8136058, z: 2.489546}
+  m_Center: {x: -0.20278588, y: -0.0029441784, z: -0.65806794}
 --- !u!1001 &1986931557
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16344,7 +16457,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: b46a4e02162cad641a26a12b751b12a1, type: 3}
       propertyPath: m_Name
-      value: mobile_skull_08
+      value: Skulls
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b46a4e02162cad641a26a12b751b12a1, type: 3}
       propertyPath: m_LocalPosition.x
