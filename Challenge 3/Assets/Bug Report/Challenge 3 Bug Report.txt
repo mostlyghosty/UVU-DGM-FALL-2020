@@ -1,0 +1,104 @@
+Challenge 3 Bug Report
+1. Player Movement – High Priority
+	a. Environment
+		i. PC, Windows 10
+		ii. Unity 2020.1.4f1
+	b. Steps to reproduce
+		i. Start Game
+	c. Expected Result
+		i. Upon Pressing space bar, the balloon object should float upwards
+	d. Actual Result
+		i. Player has no control of balloon object
+
+2. Looping Background – Medium priority
+	a. Environment
+		i. PC, Windows 10
+		ii. Unity 2020.1.4f1
+	b. Steps to reproduce
+		i. User triggers Game over event
+	c. Expected Result
+		i. The background should begin looping smoothly at the start of the game
+	d. Actual Result
+		i. The background begins looping after game over event is triggered
+
+3. Looping Background – Medium Priority
+	a. Environment
+		i. PC, Windows 10
+		ii. Unity 2020.1.4f1
+	b. Steps to reproduce
+		i. User starts game, or triggers game over event
+	c. Expected Result
+		i. The background should loop seamlessly
+	d. Actual Result
+		i. The background loops halfway through the image, causing it to appear jittery
+
+4. Spawn Obstacles and Rewards – High Priority
+	a. Environment
+		i. PC, Windows 10
+		ii. Unity 2020.1.4f1
+	b. Steps to reproduce
+		i. Start game
+	c. Expected Result
+		i. Bombs and money should spawn in random positions, every few seconds, and move left across the screen.
+	d. Actual Result
+		i. Bombs and money do not spawn at all
+
+5. Particle Effects – Low Priority
+	a. Environment
+		i. PC, Windows 10
+		ii. Unity 2020.1.4f1
+	b. Steps to reproduce
+		i. User starts game and collides with money object
+	c. Expected Result
+		i. A firework particle effect should trigger at the balloons position upon colliding with money object
+	d. Actual Result
+		i. Firework particle effect triggers to the side of the balloon upon colliding with money object
+
+6. Player Constraints – Medium Priority
+	a. Environment
+		i. PC, Windows 10
+		ii. Unity 2020.1.4f1
+	b. Steps to reproduce
+		i. User holds the space bar for too long, or does not hold the space bar at all
+	c. Expected Result
+		i. Balloon object should not leave area of play at the top or bottom of the environment.
+	d. Actual Result
+		i. Balloon object can travel far out of bounds both at the top and bottom of the play area.
+
+7. Player Constraints – Low Priority
+	a. Environment
+		i. PC, Windows 10
+		ii. Unity 2020.1.4f1
+	b. Steps to reproduce
+		i. User does not hold the space bar at all
+	c. Expected Result
+		i. Upon colliding with the ground, balloon object should bounce and play a sound effect
+	d. Actual Result
+		i. Balloon object reaches the ground and remains there until the user presses space
+
+8. Game Over – Low Priority
+	a. Environment
+		i. PC, Windows 10
+		ii. Unity 2020.1.4f1
+	b. Steps to reproduce
+		i. User collides with Bomb object
+	c. Expected Result
+		i. Upon triggering the game over event, balloon object should not move
+	d. Actual Result
+		i. Balloon object continuously bounces off ground after triggering game over event.
+
+9. Spawn Manager – Medium Priority
+	a. Environment
+		i. PC, Windows 10
+		ii. Unity 2020.1.4f1
+	b. Steps to reproduce
+		i. Start Game
+	c. Expected Result
+		i. Spawning objects should instantiate at random intervals of time
+	d. Actual Result
+		i. Spawning objects instantiate at a constant rate
+
+
+
+
+
