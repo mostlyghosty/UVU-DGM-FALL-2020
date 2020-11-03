@@ -24,6 +24,9 @@ public class Dialogue : MonoBehaviour
     private AudioSource playerAudio;
 
     public AudioClip pickUp;
+
+    //Send to typewriter behaviour
+    public TypeWriterEffect sendToTypeWriter;
     private static Dictionary<string, string> dialogue = new Dictionary<string, string>
         {
             {"Start", "If I don't want to be stuck in this temple forever, I'd better look for a way to escape"},
@@ -55,7 +58,7 @@ public class Dialogue : MonoBehaviour
     void Start()
     {
         //Initializes the timer function
-        time = 4f;
+        time = 5f;
         timer = time;
 
         playerAudio = GetComponent<AudioSource>();
@@ -72,7 +75,9 @@ public class Dialogue : MonoBehaviour
             startGame = false;
             timer = time;
             Invoke("RandomSoundGenerator", 0);
-            dialogueBox.text = dialogue["Start"];
+            sendToTypeWriter.textVar = true;
+            sendToTypeWriter.fullText = dialogue["Start"];
+            //dialogueBox.text = dialogue["Start"];
         }
 
        /* if (setPiece != null && ePress == true && Item is in inventory)
@@ -95,7 +100,9 @@ public class Dialogue : MonoBehaviour
             
             Invoke("RandomSoundGenerator", 0);
             //Send dialogue to the dialoguebox
-            dialogueBox.text = dialogue[setPiece];
+            sendToTypeWriter.textVar = true;
+            sendToTypeWriter.fullText = dialogue[setPiece];
+            //dialogueBox.text = dialogue[setPiece];
         }
 
         //Once the time runs out reset everything

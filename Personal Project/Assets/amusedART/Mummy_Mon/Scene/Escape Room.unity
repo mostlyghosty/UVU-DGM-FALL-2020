@@ -5061,6 +5061,7 @@ GameObject:
   - component: {fileID: 600860812}
   - component: {fileID: 600860811}
   - component: {fileID: 600860813}
+  - component: {fileID: 600860814}
   m_Layer: 5
   m_Name: ' Dialogue Box'
   m_TagString: Untagged
@@ -5144,6 +5145,21 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &600860814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600860809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af16a5b234848544fba0aa6c7fa09550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0.03
+  fullText: 
+  textVar: 0
 --- !u!1001 &605373028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14227,6 +14243,7 @@ MonoBehaviour:
   playerRotation: 0
   targetAngle: 0
   diffAngle: 0
+  footStep: {fileID: 8300000, guid: df0f02816989a0348b801669beb67362, type: 3}
 --- !u!54 &1839654039
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14279,6 +14296,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 86b2f3804db29524cbbf174874836f6f, type: 3}
   - {fileID: 8300000, guid: 79c0c96475832104aba9b73e667b6a2b, type: 3}
   pickUp: {fileID: 8300000, guid: 3becec1909f194046945d85ac1077772, type: 3}
+  sendToTypeWriter: {fileID: 600860814}
 --- !u!65 &1839654042
 BoxCollider:
   m_ObjectHideFlags: 0

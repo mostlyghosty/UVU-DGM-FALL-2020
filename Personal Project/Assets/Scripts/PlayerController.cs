@@ -15,10 +15,15 @@ public class PlayerController : MonoBehaviour
 
     public float diffAngle;
 
+
+    //footsteps sound effects
+    private AudioSource playerAudio;
+    public AudioClip footStep;
+
     // Start is called before the first frame update
     void Start()
     {
-    
+        playerAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -69,13 +74,17 @@ public class PlayerController : MonoBehaviour
         // Starts and stops walking animation based on input
         if(horizontalInput != 0 || forwardInput != 0)
         {
+           // playerAudio.PlayOneShot(footStep, 0.3f);
             GetComponent<Animator>().Play("Move");
         }
 
         else
         {
+           // playerAudio.Stop();
             GetComponent<Animator>().Play("Idle");
         }
+
+
     
     }
 }
