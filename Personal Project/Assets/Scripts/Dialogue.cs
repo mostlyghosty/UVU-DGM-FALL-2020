@@ -29,18 +29,18 @@ public class Dialogue : MonoBehaviour
     public TypeWriterEffect sendToTypeWriter;
     private static Dictionary<string, string> dialogue = new Dictionary<string, string>
         {
-            {"Start", "If I don't want to be stuck in this temple forever, I'd better look for a way to escape"},
+            {"Start", "If I don't want to be stuck in this temple forever, I'd better look for a way to escape."},
             {"Knife", "It's still as sharp as a ... well, a knife."},
             {"Bone", "Dusty, just like I am"},
             {"Ancient Note", "Hmm, all the pages in these books are blank, except one. I don't recognize the language though."},
-            {"Strange Gem", "There's something shiny at the bottom but I can reach it with my stubby arms."},
+            {"Strange Gem", "There's something shiny at the bottom but I can't reach it with my stubby arms."},
             {"Spider Web", "It's too sticky to touch. I'll need something to cut it down with."},
             {"Jars", "Filled with darkness."},
             {"Broken Boxes", "They'll fall apart if I touch them and I don't want splinters."},
             {"Table", "Just some old jars."},
             {"Bucket", "It's got too many holes in it to hold anything."},
             {"Skulls", "Alas, poor Yorrick... or something like that anyway."},
-            {"Crates", "Empty, Empty, Empty, and Empty."},
+            {"Crates", "Empty, empty, empty, and empty."},
             {"Sack", "Just sand in here."},
             {"Altar", "It says 'To leave the world you know far behind, light the altar in due time.'"},
             {"Cubes", "I was never one for stonework."},
@@ -74,10 +74,9 @@ public class Dialogue : MonoBehaviour
         {
             startGame = false;
             timer = time;
-            Invoke("RandomSoundGenerator", 0);
             sendToTypeWriter.textVar = true;
             sendToTypeWriter.fullText = dialogue["Start"];
-            //dialogueBox.text = dialogue["Start"];
+            
         }
 
        /* if (setPiece != null && ePress == true && Item is in inventory)
@@ -98,11 +97,9 @@ public class Dialogue : MonoBehaviour
                 playerAudio.PlayOneShot(pickUp, 0.3f);
             } 
             
-            Invoke("RandomSoundGenerator", 0);
-            //Send dialogue to the dialoguebox
             sendToTypeWriter.textVar = true;
             sendToTypeWriter.fullText = dialogue[setPiece];
-            //dialogueBox.text = dialogue[setPiece];
+          
         }
 
         //Once the time runs out reset everything
@@ -112,11 +109,6 @@ public class Dialogue : MonoBehaviour
             timer = time;
         }
 
-    }
-
-    void RandomSoundGenerator()
-    {
-        playerAudio.PlayOneShot(voiceClips[Random.Range(0, voiceClips.Length)], 1.0f);
     }
 
     
