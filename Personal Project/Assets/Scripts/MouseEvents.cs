@@ -9,8 +9,11 @@ public class MouseEvents : MonoBehaviour
 {
     private GraphicRaycaster slotRaycast;
     private PointerEventData pointerData;
-    private EventSystem gameEventSystem;  
-    
+    private EventSystem gameEventSystem; 
+
+    public string useItem;
+
+    public Inventory sendToInventory;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +25,7 @@ public class MouseEvents : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             pointerData = new PointerEventData(gameEventSystem);
             pointerData.position = Input.mousePosition;
@@ -33,7 +36,16 @@ public class MouseEvents : MonoBehaviour
 
             foreach (RaycastResult result in results)
             {
-                Debug.Log("Hit " + result.gameObject.name);
+                Debug.Log("Hit " + result.gameObject.GetComponent<Text>().text);
+                useItem = result.gameObject.GetComponent<Text>().text;
+            }
+
+            if (useItem != null && useItem != "")
+            {
+                GameObject inventory = GameObject.Find("Inventory");
+                Time.timeScale = 1;
+                inventory.SetActive(false);
+                sendToInventory.inventoryEnabled = false;
             }
         }
     }

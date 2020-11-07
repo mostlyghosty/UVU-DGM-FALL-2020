@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    private bool inventoryEnabled = false;
+    public bool inventoryEnabled = false;
     public GameObject inventory;
     public Text[] slots;
 
@@ -29,7 +29,7 @@ public class Inventory : MonoBehaviour
             inventoryEnabled = !inventoryEnabled;
 
             //Time scale freezes time while the inventory is active so the player can't move
-            if (inventoryEnabled == true)
+            if (inventoryEnabled == true )
             {
                 Time.timeScale = 0;
                 inventory.SetActive(true);

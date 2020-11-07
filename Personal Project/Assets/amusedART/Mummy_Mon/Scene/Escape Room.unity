@@ -2029,6 +2029,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925a5db4b5e1cc5439b8e635382eed6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useItem: 
+  sendToInventory: {fileID: 1839654044}
 --- !u!114 &297527721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2397,6 +2399,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925a5db4b5e1cc5439b8e635382eed6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useItem: 
+  sendToInventory: {fileID: 1839654044}
 --- !u!114 &314133418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3417,6 +3421,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925a5db4b5e1cc5439b8e635382eed6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useItem: 
+  sendToInventory: {fileID: 1839654044}
 --- !u!114 &365735141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4593,6 +4599,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925a5db4b5e1cc5439b8e635382eed6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useItem: 
+  sendToInventory: {fileID: 1839654044}
 --- !u!114 &497999992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6028,6 +6036,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925a5db4b5e1cc5439b8e635382eed6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useItem: 
+  sendToInventory: {fileID: 1839654044}
 --- !u!114 &629178227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6677,6 +6687,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925a5db4b5e1cc5439b8e635382eed6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useItem: 
+  sendToInventory: {fileID: 1839654044}
 --- !u!114 &691541338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8575,6 +8587,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925a5db4b5e1cc5439b8e635382eed6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useItem: 
+  sendToInventory: {fileID: 1839654044}
 --- !u!114 &973324880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11549,6 +11563,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925a5db4b5e1cc5439b8e635382eed6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useItem: 
+  sendToInventory: {fileID: 1839654044}
 --- !u!114 &1364738950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12766,6 +12782,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925a5db4b5e1cc5439b8e635382eed6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useItem: 
+  sendToInventory: {fileID: 1839654044}
 --- !u!114 &1571834708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13585,6 +13603,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925a5db4b5e1cc5439b8e635382eed6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useItem: 
+  sendToInventory: {fileID: 1839654044}
 --- !u!114 &1702831825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15325,6 +15345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 351a45c708ad61743a49b263f2461e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryEnabled: 0
   inventory: {fileID: 1340010839}
   slots:
   - {fileID: 1571834705}
