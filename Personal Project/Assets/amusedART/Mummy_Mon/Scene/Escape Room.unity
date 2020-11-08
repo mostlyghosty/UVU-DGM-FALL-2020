@@ -2031,6 +2031,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useItem: 
   sendToInventory: {fileID: 1839654044}
+  sendToDialogue: {fileID: 1839654041}
 --- !u!114 &297527721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2401,6 +2402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useItem: 
   sendToInventory: {fileID: 1839654044}
+  sendToDialogue: {fileID: 1839654041}
 --- !u!114 &314133418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3423,6 +3425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useItem: 
   sendToInventory: {fileID: 1839654044}
+  sendToDialogue: {fileID: 1839654041}
 --- !u!114 &365735141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4601,6 +4604,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useItem: 
   sendToInventory: {fileID: 1839654044}
+  sendToDialogue: {fileID: 1839654041}
 --- !u!114 &497999992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6038,6 +6042,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useItem: 
   sendToInventory: {fileID: 1839654044}
+  sendToDialogue: {fileID: 1839654041}
 --- !u!114 &629178227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6689,6 +6694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useItem: 
   sendToInventory: {fileID: 1839654044}
+  sendToDialogue: {fileID: 1839654041}
 --- !u!114 &691541338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8589,6 +8595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useItem: 
   sendToInventory: {fileID: 1839654044}
+  sendToDialogue: {fileID: 1839654041}
 --- !u!114 &973324880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11565,6 +11572,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useItem: 
   sendToInventory: {fileID: 1839654044}
+  sendToDialogue: {fileID: 1839654041}
 --- !u!114 &1364738950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12784,6 +12792,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useItem: 
   sendToInventory: {fileID: 1839654044}
+  sendToDialogue: {fileID: 1839654041}
 --- !u!114 &1571834708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13605,6 +13614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useItem: 
   sendToInventory: {fileID: 1839654044}
+  sendToDialogue: {fileID: 1839654041}
 --- !u!114 &1702831825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15202,6 +15212,7 @@ MonoBehaviour:
   item: 
   sendToInventory: {fileID: 1839654044}
   sendToDialogue: {fileID: 1839654041}
+  correctItem: 0
 --- !u!114 &1839654041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15218,12 +15229,10 @@ MonoBehaviour:
   dialogueBox: {fileID: 600860811}
   puzzlePiece: {fileID: 0}
   ePress: 0
-  voiceClips:
-  - {fileID: 8300000, guid: 3e991adbb6aec904d978e754d4a81bcf, type: 3}
-  - {fileID: 8300000, guid: 86b2f3804db29524cbbf174874836f6f, type: 3}
-  - {fileID: 8300000, guid: 79c0c96475832104aba9b73e667b6a2b, type: 3}
   pickUp: {fileID: 8300000, guid: 3becec1909f194046945d85ac1077772, type: 3}
   sendToTypeWriter: {fileID: 600860814}
+  itemUsed: 
+  sendToDetectCollisions: {fileID: 1839654040}
 --- !u!65 &1839654042
 BoxCollider:
   m_ObjectHideFlags: 0

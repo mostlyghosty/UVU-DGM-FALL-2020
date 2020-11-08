@@ -18,6 +18,8 @@ public class DetectCollisions : MonoBehaviour
 
    private float timer;
 
+   public bool correctItem = false;
+
     void Start ()
     {
         //Initializes the counter for the slot array
@@ -58,6 +60,15 @@ public class DetectCollisions : MonoBehaviour
             timer = time;
         }
 
+        else if(correctItem && timer < 0)
+        {
+            correctItem = false;
+
+            sendToInventory.slots[counter].text = item;
+
+            Destroy(puzzlePiece);
+        }
+
 
     }
 
@@ -65,8 +76,8 @@ public class DetectCollisions : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
     
-            puzzlePiece = other.gameObject;
-            item = other.gameObject.name;
+        puzzlePiece = other.gameObject;
+        item = other.gameObject.name;
 
     }
 

@@ -19,14 +19,19 @@ public class Dialogue : MonoBehaviour
     private bool startGame = true;
 
     //SFX
-    public AudioClip[] voiceClips;
-
     private AudioSource playerAudio;
 
     public AudioClip pickUp;
 
     //Send to typewriter behaviour
     public TypeWriterEffect sendToTypeWriter;
+    
+    //track item usage
+    public string itemUsed;
+
+    public DetectCollisions sendToDetectCollisions;
+
+    //all the dialouge
     private static Dictionary<string, string> dialogue = new Dictionary<string, string>
         {
             {"Start", "If I don't want to be stuck in this temple forever, I'd better look for a way to escape."},
@@ -47,6 +52,7 @@ public class Dialogue : MonoBehaviour
             {"Secret", "It's a secret to everyone."}
         };
 
+    //secondary dialogue for Item use
     private static Dictionary<string, string> secondDialogue = new Dictionary<string, string>
         {
             {"Strange Gem", "It makes pretty patterns when I look through it."},
@@ -76,18 +82,29 @@ public class Dialogue : MonoBehaviour
             timer = time;
             sendToTypeWriter.textVar = true;
             sendToTypeWriter.fullText = dialogue["Start"];
-            
         }
 
-       /* if (setPiece != null && ePress == true && Item is in inventory)
-       {
-           timer -= Time.deltaTime;
-           dialogueBox.text = secondDialogue[setPiece];
-       }*/
+        if (itemUsed == "Knife" && setPiece == "Spider Web" )
+        {
+            itemUsed = null;
+            timer -= Time.deltaTime;
+            dialogueBox.text = secondDialogue[setPiece];
+            sendToDetectCollisions.correctItem = true;
+            sendToTypeWriter.textVar = true;
+            sendToTypeWriter.fullText = dialogue[setPiece];
+        }
 
-        //if the setPiece has text in it from detect collisions and detect collisions detected an E Key Press
-        /*should be else for secondary dialogue*/
-        if(setPiece != null && ePress == true)
+        else if (itemUsed == "Fishing Rod" && setPiece == "Strange Gem")
+        {
+            itemUsed = null;
+            timer -= Time.deltaTime;
+            dialogueBox.text = secondDialogue[setPiece];
+            sendToDetectCollisions.correctItem = true;
+            sendToTypeWriter.textVar = true;
+            sendToTypeWriter.fullText = dialogue[setPiece];
+        }
+
+        else if(setPiece != null && ePress == true)
         {   
             ePress = false;
             timer = time;
