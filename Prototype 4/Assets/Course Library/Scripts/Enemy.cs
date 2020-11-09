@@ -15,11 +15,14 @@ public class Enemy : MonoBehaviour
     {
         enemyRb = GetComponent<Rigidbody>();
         player = GameObject.Find("Player");
+
     }
 
     // Update is called once per frame
     void Update()
     {
-       enemyRb.AddForce((player.transform.position - transform.position).normalized * speed ); 
+        Vector3 lookDirection = (player.transform.position - transform.position).normalized;
+        enemyRb.AddForce(lookDirection * speed); 
+
     }
 }
