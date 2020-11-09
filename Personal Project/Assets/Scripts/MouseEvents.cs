@@ -13,12 +13,12 @@ public class MouseEvents : MonoBehaviour
     private EventSystem gameEventSystem; 
 
     //item the ray hits
-    public string useItem;
+    public string usedItem;
 
     //send info to inventory
     public Inventory sendToInventory;
 
-    public Dialogue sendToDialogue;
+    public DetectCollisions sendToDetectCollisions;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +31,7 @@ public class MouseEvents : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             //Initializes pointer Datat and bases it on mouse position
             pointerData = new PointerEventData(gameEventSystem);
@@ -46,18 +46,21 @@ public class MouseEvents : MonoBehaviour
             //sends results to use Item
             foreach (RaycastResult result in results)
             {
-                useItem = result.gameObject.GetComponent<Text>().text;
+                usedItem = result.gameObject.GetComponent<Text>().text;
             }
 
             //Closes the inventory when an Item has been used and sends the item name dialogue
-            if (useItem != null && useItem != "")
+            if (usedItem != null && usedItem != "")
             {
                 GameObject inventory = GameObject.Find("Inventory");
                 Time.timeScale = 1;
                 inventory.SetActive(false);
                 sendToInventory.inventoryEnabled = false;
-                sendToDialogue.itemUsed = useItem;
-                useItem = null;
+
+                sendToDetectCollisions.clickEvent = true;
+                sendToDetectCollisions.usedItem = usedItem;
+                
+                usedItem = null;
             }
         }
     }

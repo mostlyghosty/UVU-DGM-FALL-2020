@@ -29,7 +29,9 @@ public class Dialogue : MonoBehaviour
     //track item usage
     public string itemUsed;
 
-    public DetectCollisions sendToDetectCollisions;
+    public bool clickEvent = false;
+
+    public bool badItem = false;
 
     //all the dialouge
     private static Dictionary<string, string> dialogue = new Dictionary<string, string>
@@ -38,7 +40,7 @@ public class Dialogue : MonoBehaviour
             {"Knife", "It's still as sharp as a ... well, a knife."},
             {"Bone", "Dusty, just like I am"},
             {"Ancient Note", "Hmm, all the pages in these books are blank, except one. I don't recognize the language though."},
-            {"Strange Gem", "There's something shiny at the bottom but I can't reach it with my stubby arms."},
+            {"Strange Gem", "An, old well. There's something shiny at the bottom but I can't reach it with my stubby arms."},
             {"Spider Web", "It's too sticky to touch. I'll need something to cut it down with."},
             {"Jars", "Filled with darkness."},
             {"Broken Boxes", "They'll fall apart if I touch them and I don't want splinters."},
@@ -49,7 +51,8 @@ public class Dialogue : MonoBehaviour
             {"Sack", "Just sand in here."},
             {"Altar", "It says 'To leave the world you know far behind, light the altar in due time.'"},
             {"Cubes", "I was never one for stonework."},
-            {"Secret", "It's a secret to everyone."}
+            {"Secret", "It's a secret to everyone."},
+            {"Bad Item", "I can't use this here."}
         };
 
     //secondary dialogue for Item use
@@ -84,25 +87,26 @@ public class Dialogue : MonoBehaviour
             sendToTypeWriter.fullText = dialogue["Start"];
         }
 
-        if (itemUsed == "Knife" && setPiece == "Spider Web" )
+        if (clickEvent == true)
         {
-            itemUsed = null;
+            clickEvent = false;
             timer -= Time.deltaTime;
-            dialogueBox.text = secondDialogue[setPiece];
-            sendToDetectCollisions.correctItem = true;
-            sendToTypeWriter.textVar = true;
-            sendToTypeWriter.fullText = dialogue[setPiece];
+
+            if (setPiece != null && !badItem)
+            {
+                sendToTypeWriter.textVar = true;
+                sendToTypeWriter.fullText = secondDialogue[setPiece];
+            }
+
+            if (badItem)
+            {
+                badItem = false;
+                sendToTypeWriter.textVar = true;
+                sendToTypeWriter.fullText = dialogue["Bad Item"];
+            }
+            
         }
 
-        else if (itemUsed == "Fishing Rod" && setPiece == "Strange Gem")
-        {
-            itemUsed = null;
-            timer -= Time.deltaTime;
-            dialogueBox.text = secondDialogue[setPiece];
-            sendToDetectCollisions.correctItem = true;
-            sendToTypeWriter.textVar = true;
-            sendToTypeWriter.fullText = dialogue[setPiece];
-        }
 
         else if(setPiece != null && ePress == true)
         {   

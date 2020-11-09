@@ -1700,11 +1700,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 80
+    m_Left: 0
     m_Right: 0
-    m_Top: 200
+    m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 100, y: 100}
@@ -1949,6 +1949,7 @@ GameObject:
   - component: {fileID: 297527722}
   - component: {fileID: 297527721}
   - component: {fileID: 297527720}
+  - component: {fileID: 297527724}
   m_Layer: 5
   m_Name: Slot (5)
   m_TagString: Untagged
@@ -2029,9 +2030,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925a5db4b5e1cc5439b8e635382eed6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useItem: 
+  usedItem: 
   sendToInventory: {fileID: 1839654044}
-  sendToDialogue: {fileID: 1839654041}
+  sendToDetectCollisions: {fileID: 1839654040}
 --- !u!114 &297527721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2085,6 +2086,19 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &297527724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297527716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f88a88e48d16ba14994a6af28ecc92bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {x: 0, y: 0, z: 0}
 --- !u!1001 &304375408
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2320,6 +2334,7 @@ GameObject:
   - component: {fileID: 314133419}
   - component: {fileID: 314133418}
   - component: {fileID: 314133417}
+  - component: {fileID: 314133421}
   m_Layer: 5
   m_Name: Slot (1)
   m_TagString: Untagged
@@ -2400,9 +2415,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925a5db4b5e1cc5439b8e635382eed6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useItem: 
+  usedItem: 
   sendToInventory: {fileID: 1839654044}
-  sendToDialogue: {fileID: 1839654041}
+  sendToDetectCollisions: {fileID: 1839654040}
 --- !u!114 &314133418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2456,6 +2471,19 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &314133421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314133413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f88a88e48d16ba14994a6af28ecc92bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {x: 0, y: 0, z: 0}
 --- !u!1 &323579256 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000013409638078, guid: 427758c85f579f54f91f2e3a0450fc98,
@@ -3343,6 +3371,7 @@ GameObject:
   - component: {fileID: 365735142}
   - component: {fileID: 365735141}
   - component: {fileID: 365735140}
+  - component: {fileID: 365735144}
   m_Layer: 5
   m_Name: Slot (3)
   m_TagString: Untagged
@@ -3423,9 +3452,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925a5db4b5e1cc5439b8e635382eed6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useItem: 
+  usedItem: 
   sendToInventory: {fileID: 1839654044}
-  sendToDialogue: {fileID: 1839654041}
+  sendToDetectCollisions: {fileID: 1839654040}
 --- !u!114 &365735141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3479,6 +3508,19 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &365735144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365735136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f88a88e48d16ba14994a6af28ecc92bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {x: 0, y: 0, z: 0}
 --- !u!4 &371329348 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000011033970140, guid: cab999ba165121a4e80d65aba7d499c2,
@@ -4522,6 +4564,7 @@ GameObject:
   - component: {fileID: 497999993}
   - component: {fileID: 497999992}
   - component: {fileID: 497999991}
+  - component: {fileID: 497999995}
   m_Layer: 5
   m_Name: Slot (2)
   m_TagString: Untagged
@@ -4602,9 +4645,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925a5db4b5e1cc5439b8e635382eed6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useItem: 
+  usedItem: 
   sendToInventory: {fileID: 1839654044}
-  sendToDialogue: {fileID: 1839654041}
+  sendToDetectCollisions: {fileID: 1839654040}
 --- !u!114 &497999992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4658,6 +4701,19 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &497999995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497999987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f88a88e48d16ba14994a6af28ecc92bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {x: 0, y: 0, z: 0}
 --- !u!1 &498790060
 GameObject:
   m_ObjectHideFlags: 0
@@ -5519,7 +5575,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 50
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -5960,6 +6016,7 @@ GameObject:
   - component: {fileID: 629178228}
   - component: {fileID: 629178227}
   - component: {fileID: 629178226}
+  - component: {fileID: 629178230}
   m_Layer: 5
   m_Name: Slot (4)
   m_TagString: Untagged
@@ -6040,9 +6097,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925a5db4b5e1cc5439b8e635382eed6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useItem: 
+  usedItem: 
   sendToInventory: {fileID: 1839654044}
-  sendToDialogue: {fileID: 1839654041}
+  sendToDetectCollisions: {fileID: 1839654040}
 --- !u!114 &629178227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6096,6 +6153,19 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &629178230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629178222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f88a88e48d16ba14994a6af28ecc92bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {x: 0, y: 0, z: 0}
 --- !u!1 &632015194 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1895291820950270, guid: 645e0ccb96eef934aa12bd4c02a4bd66,
@@ -6612,6 +6682,7 @@ GameObject:
   - component: {fileID: 691541339}
   - component: {fileID: 691541338}
   - component: {fileID: 691541337}
+  - component: {fileID: 691541341}
   m_Layer: 5
   m_Name: Slot (7)
   m_TagString: Untagged
@@ -6692,9 +6763,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925a5db4b5e1cc5439b8e635382eed6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useItem: 
+  usedItem: 
   sendToInventory: {fileID: 1839654044}
-  sendToDialogue: {fileID: 1839654041}
+  sendToDetectCollisions: {fileID: 1839654040}
 --- !u!114 &691541338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6748,6 +6819,19 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &691541341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691541333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f88a88e48d16ba14994a6af28ecc92bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {x: 0, y: 0, z: 0}
 --- !u!1001 &692194213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8513,6 +8597,7 @@ GameObject:
   - component: {fileID: 973324881}
   - component: {fileID: 973324880}
   - component: {fileID: 973324879}
+  - component: {fileID: 973324883}
   m_Layer: 5
   m_Name: Slot (6)
   m_TagString: Untagged
@@ -8593,9 +8678,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925a5db4b5e1cc5439b8e635382eed6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useItem: 
+  usedItem: 
   sendToInventory: {fileID: 1839654044}
-  sendToDialogue: {fileID: 1839654041}
+  sendToDetectCollisions: {fileID: 1839654040}
 --- !u!114 &973324880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8649,6 +8734,19 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &973324883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973324875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f88a88e48d16ba14994a6af28ecc92bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {x: 0, y: 0, z: 0}
 --- !u!4 &985626650 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000013480976020, guid: 1bb5689aff5896c44a2c10801d1d1423,
@@ -11490,6 +11588,7 @@ GameObject:
   - component: {fileID: 1364738951}
   - component: {fileID: 1364738950}
   - component: {fileID: 1364738949}
+  - component: {fileID: 1364738953}
   m_Layer: 5
   m_Name: Slot (9)
   m_TagString: Untagged
@@ -11570,9 +11669,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925a5db4b5e1cc5439b8e635382eed6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useItem: 
+  usedItem: 
   sendToInventory: {fileID: 1839654044}
-  sendToDialogue: {fileID: 1839654041}
+  sendToDetectCollisions: {fileID: 1839654040}
 --- !u!114 &1364738950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11626,6 +11725,19 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &1364738953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364738945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f88a88e48d16ba14994a6af28ecc92bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {x: 0, y: 0, z: 0}
 --- !u!4 &1366444304 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000013224114162, guid: 8859acd5a81cf7c499011be8fa88d940,
@@ -12710,6 +12822,7 @@ GameObject:
   - component: {fileID: 1571834708}
   - component: {fileID: 1571834707}
   - component: {fileID: 1571834710}
+  - component: {fileID: 1571834711}
   m_Layer: 5
   m_Name: Slot
   m_TagString: Untagged
@@ -12790,9 +12903,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925a5db4b5e1cc5439b8e635382eed6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useItem: 
+  usedItem: 
   sendToInventory: {fileID: 1839654044}
-  sendToDialogue: {fileID: 1839654041}
+  sendToDetectCollisions: {fileID: 1839654040}
 --- !u!114 &1571834708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12846,6 +12959,19 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &1571834711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571834703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f88a88e48d16ba14994a6af28ecc92bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {x: 0, y: 0, z: 0}
 --- !u!1001 &1582709162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13532,6 +13658,7 @@ GameObject:
   - component: {fileID: 1702831826}
   - component: {fileID: 1702831825}
   - component: {fileID: 1702831824}
+  - component: {fileID: 1702831828}
   m_Layer: 5
   m_Name: Slot (8)
   m_TagString: Untagged
@@ -13612,9 +13739,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925a5db4b5e1cc5439b8e635382eed6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useItem: 
+  usedItem: 
   sendToInventory: {fileID: 1839654044}
-  sendToDialogue: {fileID: 1839654041}
+  sendToDetectCollisions: {fileID: 1839654040}
 --- !u!114 &1702831825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13668,6 +13795,19 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &1702831828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702831820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f88a88e48d16ba14994a6af28ecc92bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {x: 0, y: 0, z: 0}
 --- !u!1001 &1708293931
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15212,7 +15352,8 @@ MonoBehaviour:
   item: 
   sendToInventory: {fileID: 1839654044}
   sendToDialogue: {fileID: 1839654041}
-  correctItem: 0
+  clickEvent: 0
+  usedItem: 
 --- !u!114 &1839654041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15232,7 +15373,8 @@ MonoBehaviour:
   pickUp: {fileID: 8300000, guid: 3becec1909f194046945d85ac1077772, type: 3}
   sendToTypeWriter: {fileID: 600860814}
   itemUsed: 
-  sendToDetectCollisions: {fileID: 1839654040}
+  clickEvent: 0
+  badItem: 0
 --- !u!65 &1839654042
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15801,8 +15943,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.72786105, y: 0.910883, z: 0.9054333}
-  m_Center: {x: -0.0500383, y: 0.42917463, z: -0.12936513}
+  m_Size: {x: 0.72786105, y: 0.910883, z: 0.9029637}
+  m_Center: {x: -0.050038297, y: 0.42917463, z: -0.13060133}
 --- !u!54 &1888736967
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15819,19 +15961,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &1888736968
-BoxCollider:
+--- !u!136 &1888736968
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1888736961}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.133375, y: 0.31456634, z: 0.6437698}
-  m_Center: {x: -0.25279528, y: 0.13101366, z: 0.0014665289}
+  m_Radius: 0.5303716
+  m_Height: 1.0607433
+  m_Direction: 1
+  m_Center: {x: 0.116403095, y: 0.23530021, z: 0.0014665384}
 --- !u!1001 &1890605560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16235,11 +16378,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 80
+    m_Left: 0
     m_Right: 0
-    m_Top: 200
+    m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 100, y: 100}
@@ -16805,7 +16948,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 12}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1998198739

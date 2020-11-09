@@ -18,7 +18,11 @@ public class DetectCollisions : MonoBehaviour
 
    private float timer;
 
-   public bool correctItem = false;
+   public bool clickEvent = false;
+
+   public string usedItem;
+
+   
 
     void Start ()
     {
@@ -33,12 +37,57 @@ public class DetectCollisions : MonoBehaviour
     {
         timer -= Time.deltaTime;
 
+        if (clickEvent)
+        {
+            clickEvent = false;                
+
+            if (item == "Spider Web" && usedItem == "Knife")
+            {
+                sendToInventory.slots[counter].text = item;
+
+                sendToDialogue.setPiece = item;
+                sendToDialogue.puzzlePiece = puzzlePiece;
+                sendToDialogue.clickEvent = true;
+
+                Destroy(puzzlePiece);
+
+                counter += 1;
+                timer = time;
+
+                item = null;
+                puzzlePiece = null;
+            }
+
+            else if (item == "Strange Gem" && usedItem == "Fishing Rod")
+            {
+                sendToInventory.slots[counter].text = item;
+
+                sendToDialogue.setPiece = item;
+                sendToDialogue.puzzlePiece = puzzlePiece;
+                sendToDialogue.clickEvent = true;
+
+                Destroy(puzzlePiece);
+
+                counter += 1;
+                timer = time;
+
+                item = null;
+                puzzlePiece = null;
+            }
+
+            else 
+            {
+                sendToDialogue.clickEvent = true;
+                sendToDialogue.badItem = true;
+            }
+        }
+
         //if you are still near the object and e is pressed
-        if(puzzlePiece != null && Input.GetKeyDown(KeyCode.E) && puzzlePiece.gameObject.CompareTag("Puzzle Piece") && timer < 0)
+        if (puzzlePiece != null && timer < 0 && Input.GetKeyDown(KeyCode.E) && puzzlePiece.gameObject.CompareTag("Puzzle Piece") )
         {
             //sends the object to the inventory script
             sendToInventory.slots[counter].text = item;
-
+                
             //Also sends information about the item to dialogue script
             sendToDialogue.setPiece = item;
             sendToDialogue.ePress = true;
@@ -49,7 +98,16 @@ public class DetectCollisions : MonoBehaviour
             //moves to the next empty space in the slots array in the inventory script
             counter += 1;
             timer = time;
+
+           /* if (item == "Bone")
+            {
+                public GameObject skulls = GameObject.Find("Skulls");
+                public CapsuleCollider skullsCollider = skulls.GetComponent<CapsuleCollider>();
+
+                skullsCollider.isTriger = true;
+            } */              
         }
+   
 
         else if(puzzlePiece != null && Input.GetKeyDown(KeyCode.E) && timer < 0)
         {
@@ -59,17 +117,6 @@ public class DetectCollisions : MonoBehaviour
 
             timer = time;
         }
-
-        else if(correctItem && timer < 0)
-        {
-            correctItem = false;
-
-            sendToInventory.slots[counter].text = item;
-
-            Destroy(puzzlePiece);
-        }
-
-
     }
 
     //If collision is entered sends the object collided with to an empty game object and gets the name and sends it to a text string
