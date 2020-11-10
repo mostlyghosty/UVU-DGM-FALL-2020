@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class Inventory : MonoBehaviour
 {
@@ -35,6 +36,7 @@ public class Inventory : MonoBehaviour
                 inventory.SetActive(true);
             }
 
+            //Inventory closes and timescale resumes as normal
             else 
             {
                 Time.timeScale = 1;

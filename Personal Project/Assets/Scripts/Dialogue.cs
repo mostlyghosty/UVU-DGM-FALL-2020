@@ -70,6 +70,7 @@ public class Dialogue : MonoBehaviour
         time = 5f;
         timer = time;
 
+        //initializes the player audio
         playerAudio = GetComponent<AudioSource>();
 
     }
@@ -79,6 +80,7 @@ public class Dialogue : MonoBehaviour
     {
         timer -= Time.deltaTime;
 
+        //if the game is started send intro text to typewriter
         if(startGame)
         {
             startGame = false;
@@ -87,17 +89,20 @@ public class Dialogue : MonoBehaviour
             sendToTypeWriter.fullText = dialogue["Start"];
         }
 
+        //if there was a click event sent from Detect Collisions
         if (clickEvent == true)
         {
             clickEvent = false;
             timer -= Time.deltaTime;
 
+            //if the item use was good send dialogue to typewriter
             if (setPiece != null && !badItem)
             {
                 sendToTypeWriter.textVar = true;
                 sendToTypeWriter.fullText = secondDialogue[setPiece];
             }
 
+            //if item use was bad send error message to typewriter
             if (badItem)
             {
                 badItem = false;
@@ -107,17 +112,19 @@ public class Dialogue : MonoBehaviour
             
         }
 
-
+        //if a set piece and an epress was sent over from Detect collisions
         else if(setPiece != null && ePress == true)
         {   
             ePress = false;
             timer = time;
 
+            //if it's meant to be picked up play the pickup sound
             if (puzzlePiece != null && puzzlePiece.gameObject.CompareTag("Puzzle Piece"))
             {
                 playerAudio.PlayOneShot(pickUp, 0.3f);
             } 
             
+            //send dialogue about item to typewriter
             sendToTypeWriter.textVar = true;
             sendToTypeWriter.fullText = dialogue[setPiece];
           

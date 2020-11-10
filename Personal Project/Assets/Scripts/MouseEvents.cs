@@ -33,7 +33,7 @@ public class MouseEvents : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {
-            //Initializes pointer Datat and bases it on mouse position
+            //Initializes pointer Data and bases it on mouse position
             pointerData = new PointerEventData(gameEventSystem);
             pointerData.position = Input.mousePosition;
 
@@ -49,7 +49,7 @@ public class MouseEvents : MonoBehaviour
                 usedItem = result.gameObject.GetComponent<Text>().text;
             }
 
-            //Closes the inventory when an Item has been used and sends the item name dialogue
+            //Closes the inventory when an Item has been used and sends info to detect colisions
             if (usedItem != null && usedItem != "")
             {
                 GameObject inventory = GameObject.Find("Inventory");

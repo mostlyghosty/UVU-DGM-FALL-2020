@@ -631,7 +631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  focalPoint: {fileID: 0}
+  focalPoint: {fileID: 154506274}
 --- !u!1001 &3425672601348000724
 PrefabInstance:
   m_ObjectHideFlags: 0
