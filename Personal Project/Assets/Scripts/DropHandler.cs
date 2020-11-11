@@ -7,11 +7,7 @@ public class DropHandler : MonoBehaviour, IDropHandler
 {
     public void OnDrop(PointerEventData eventData)
     {
-        RectTransform invPanel = transform as RectTransform;
-
-        if(!RectTransformUtility.RectangleContainsScreenPoint(invPanel, Input.mousePosition))
-        {
-            Debug.Log("Drop Item");
-        }
+        
     }
+
 }

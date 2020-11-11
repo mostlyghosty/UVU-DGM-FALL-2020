@@ -98,6 +98,7 @@ public class Dialogue : MonoBehaviour
             //if the item use was good send dialogue to typewriter
             if (setPiece != null && !badItem)
             {
+                playerAudio.PlayOneShot(pickUp, 0.3f);
                 sendToTypeWriter.textVar = true;
                 sendToTypeWriter.fullText = secondDialogue[setPiece];
             }
