@@ -15,10 +15,14 @@ public class MouseEvents : MonoBehaviour
     //item the ray hits
     public string usedItem;
 
+    public string hover;
+
     //send info to inventory
     public Inventory sendToInventory;
 
     public DetectCollisions sendToDetectCollisions;
+
+    public bool drag = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +35,30 @@ public class MouseEvents : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (drag)
+        {
+            pointerData = new PointerEventData(gameEventSystem);
+            pointerData.position = Input.mousePosition;
+
+            //creates a list to store the results of what the ray hit (will always be tied to the slot the script is attached to)
+            List<RaycastResult> results = new List<RaycastResult>();
+
+            //Shoots the ray and sends what it hit to results
+            slotRaycast.Raycast(pointerData, results);
+
+            //sends results to use Item
+            foreach (RaycastResult result in results)
+            {
+                usedItem = result.gameObject.GetComponent<Text>().text;
+            } 
+
+            if (Input.GetKeyUp(KeyCode.Mouse0))
+            {
+                drag = false;
+            }
+        }
+
+
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             //Initializes pointer Data and bases it on mouse position

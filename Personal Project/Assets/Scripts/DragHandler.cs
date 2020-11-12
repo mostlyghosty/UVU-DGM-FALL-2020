@@ -5,9 +5,12 @@ using UnityEngine.EventSystems;
 
 public class DragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
 {  
+    public MouseEvents sendToMouseEvents;
+
     //When a UI inventory object is dragged it follows the mouse position
     public void OnDrag(PointerEventData eventData)
     {
+        sendToMouseEvents.drag = true;
         transform.position = Input.mousePosition;
     }
 
