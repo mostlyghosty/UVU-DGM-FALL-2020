@@ -2,15 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
-public class DragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
+using UnityEngine.UI;
+public class DragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
 {  
-    public MouseEvents sendToMouseEvents;
+    public CraftingHandler sendToCraftingHandler;
+    private CanvasGroup canvasGroup;
 
+    void Awake()
+    {
+        //initializes the canvas group on the slot
+        canvasGroup = GetComponent<CanvasGroup>();
+    }
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        //prevents dragged Item from blocking raycasts underneath it
+        canvasGroup.blocksRaycasts = false;
+
+        //sends info about what is being dragged to the crafting handler
+        sendToCraftingHandler.draggedItemText = GetComponent<Text>().text;
+        sendToCraftingHandler.draggedItem = gameObject;
+    }
+    
     //When a UI inventory object is dragged it follows the mouse position
     public void OnDrag(PointerEventData eventData)
     {
-        sendToMouseEvents.drag = true;
         transform.position = Input.mousePosition;
     }
 
@@ -18,6 +33,7 @@ public class DragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     public void OnEndDrag(PointerEventData eventData)
     {
         transform.localPosition = Vector3.zero;
+        canvasGroup.blocksRaycasts = true;
     }
 }
     

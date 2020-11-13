@@ -22,7 +22,7 @@ public class MouseEvents : MonoBehaviour
 
     public DetectCollisions sendToDetectCollisions;
 
-    public bool drag = false;
+    public int tap = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -35,61 +35,56 @@ public class MouseEvents : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (drag)
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            pointerData = new PointerEventData(gameEventSystem);
-            pointerData.position = Input.mousePosition;
+            tap++;
 
-            //creates a list to store the results of what the ray hit (will always be tied to the slot the script is attached to)
-            List<RaycastResult> results = new List<RaycastResult>();
+            StartCoroutine(ClearTaps());
 
-            //Shoots the ray and sends what it hit to results
-            slotRaycast.Raycast(pointerData, results);
-
-            //sends results to use Item
-            foreach (RaycastResult result in results)
+            //checks for a double click
+            if(tap > 1)
             {
-                usedItem = result.gameObject.GetComponent<Text>().text;
-            } 
+                //resets the double cilck
+                tap = 0;
 
-            if (Input.GetKeyUp(KeyCode.Mouse0))
-            {
-                drag = false;
-            }
-        }
+                //Initializes pointer Data and bases it on mouse position
+                pointerData = new PointerEventData(gameEventSystem);
+                pointerData.position = Input.mousePosition;
 
+                //creates a list to store the results of what the ray hit (will always be tied to the slot the script is attached to)
+                List<RaycastResult> results = new List<RaycastResult>();
 
-        if (Input.GetKeyUp(KeyCode.Mouse0))
-        {
-            //Initializes pointer Data and bases it on mouse position
-            pointerData = new PointerEventData(gameEventSystem);
-            pointerData.position = Input.mousePosition;
+                //Shoots the ray and sends what it hit to results
+                slotRaycast.Raycast(pointerData, results);
 
-            //creates a list to store the results of what the ray hit (will always be tied to the slot the script is attached to)
-            List<RaycastResult> results = new List<RaycastResult>();
+                //sends results to use Item
+                foreach (RaycastResult result in results)
+                {
+                    usedItem = result.gameObject.GetComponent<Text>().text;
+                }
 
-            //Shoots the ray and sends what it hit to results
-            slotRaycast.Raycast(pointerData, results);
+                //Closes the inventory when an Item has been used and sends info to detect colisions
+                if (usedItem != null && usedItem != "")
+                {
+                    GameObject inventory = GameObject.Find("Inventory");
+                    Time.timeScale = 1;
+                    inventory.SetActive(false);
+                    sendToInventory.inventoryEnabled = false;
 
-            //sends results to use Item
-            foreach (RaycastResult result in results)
-            {
-                usedItem = result.gameObject.GetComponent<Text>().text;
-            }
-
-            //Closes the inventory when an Item has been used and sends info to detect colisions
-            if (usedItem != null && usedItem != "")
-            {
-                GameObject inventory = GameObject.Find("Inventory");
-                Time.timeScale = 1;
-                inventory.SetActive(false);
-                sendToInventory.inventoryEnabled = false;
-
-                sendToDetectCollisions.clickEvent = true;
-                sendToDetectCollisions.usedItem = usedItem;
-                
-                usedItem = null;
+                    sendToDetectCollisions.clickEvent = true;
+                    sendToDetectCollisions.usedItem = usedItem;
+                    
+                    usedItem = null;
+                }
             }
         }
     }
+
+    //Clears tap data if double click is not fast enough
+    IEnumerator ClearTaps()
+    {
+        yield return new WaitForSecondsRealtime(.5f);
+        tap = 0;
+    }
+
 }

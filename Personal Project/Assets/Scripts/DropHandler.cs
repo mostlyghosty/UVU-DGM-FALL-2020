@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DropHandler : MonoBehaviour, IDropHandler
 {
+   public CraftingHandler sendToCraftingHandler;
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log("Item Dropped");
+        //sends information about the Item the dragged Item was dropped on to crafting handler
+        sendToCraftingHandler.droppedOnText = GetComponent<Text>().text;
+        sendToCraftingHandler.droppedOn = gameObject;
     }
 
 }

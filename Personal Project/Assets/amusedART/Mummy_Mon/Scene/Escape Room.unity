@@ -1841,6 +1841,7 @@ GameObject:
   - component: {fileID: 297527720}
   - component: {fileID: 297527724}
   - component: {fileID: 297527725}
+  - component: {fileID: 297527726}
   m_Layer: 5
   m_Name: Text Slot 6
   m_TagString: Slot
@@ -1925,7 +1926,7 @@ MonoBehaviour:
   hover: 
   sendToInventory: {fileID: 1839654044}
   sendToDetectCollisions: {fileID: 1839654040}
-  drag: 0
+  tap: 0
 --- !u!114 &297527721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1991,7 +1992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88a88e48d16ba14994a6af28ecc92bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sendToMouseEvents: {fileID: 297527720}
+  sendToCraftingHandler: {fileID: 1839654047}
 --- !u!114 &297527725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2004,6 +2005,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f318aaa6bab924647b6eaeb9b9a7bcb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sendToCraftingHandler: {fileID: 1839654047}
+--- !u!225 &297527726
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297527716}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &304375408
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2242,6 +2256,7 @@ GameObject:
   - component: {fileID: 314133421}
   - component: {fileID: 314133422}
   - component: {fileID: 314133423}
+  - component: {fileID: 314133424}
   m_Layer: 5
   m_Name: Text Slot 2
   m_TagString: Slot
@@ -2326,7 +2341,7 @@ MonoBehaviour:
   hover: 
   sendToInventory: {fileID: 1839654044}
   sendToDetectCollisions: {fileID: 1839654040}
-  drag: 0
+  tap: 0
 --- !u!114 &314133418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2392,7 +2407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88a88e48d16ba14994a6af28ecc92bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sendToMouseEvents: {fileID: 314133417}
+  sendToCraftingHandler: {fileID: 1839654047}
 --- !u!114 &314133422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2405,6 +2420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f318aaa6bab924647b6eaeb9b9a7bcb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sendToCraftingHandler: {fileID: 1839654047}
 --- !u!61 &314133423
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2431,6 +2447,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!225 &314133424
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314133413}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &323579256 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000013409638078, guid: 427758c85f579f54f91f2e3a0450fc98,
@@ -3321,6 +3349,7 @@ GameObject:
   - component: {fileID: 365735140}
   - component: {fileID: 365735144}
   - component: {fileID: 365735145}
+  - component: {fileID: 365735146}
   m_Layer: 5
   m_Name: Text Slot 4
   m_TagString: Slot
@@ -3405,7 +3434,7 @@ MonoBehaviour:
   hover: 
   sendToInventory: {fileID: 1839654044}
   sendToDetectCollisions: {fileID: 1839654040}
-  drag: 0
+  tap: 0
 --- !u!114 &365735141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3471,7 +3500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88a88e48d16ba14994a6af28ecc92bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sendToMouseEvents: {fileID: 365735140}
+  sendToCraftingHandler: {fileID: 1839654047}
 --- !u!114 &365735145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3484,6 +3513,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f318aaa6bab924647b6eaeb9b9a7bcb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sendToCraftingHandler: {fileID: 1839654047}
+--- !u!225 &365735146
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365735136}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!4 &371329348 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000011033970140, guid: cab999ba165121a4e80d65aba7d499c2,
@@ -4529,6 +4571,7 @@ GameObject:
   - component: {fileID: 497999991}
   - component: {fileID: 497999995}
   - component: {fileID: 497999996}
+  - component: {fileID: 497999997}
   m_Layer: 5
   m_Name: Text Slot 3
   m_TagString: Slot
@@ -4613,7 +4656,7 @@ MonoBehaviour:
   hover: 
   sendToInventory: {fileID: 1839654044}
   sendToDetectCollisions: {fileID: 1839654040}
-  drag: 0
+  tap: 0
 --- !u!114 &497999992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4679,7 +4722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88a88e48d16ba14994a6af28ecc92bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sendToMouseEvents: {fileID: 497999991}
+  sendToCraftingHandler: {fileID: 1839654047}
 --- !u!114 &497999996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4692,6 +4735,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f318aaa6bab924647b6eaeb9b9a7bcb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sendToCraftingHandler: {fileID: 1839654047}
+--- !u!225 &497999997
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497999987}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &498790060
 GameObject:
   m_ObjectHideFlags: 0
@@ -5292,7 +5348,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Click to Use
+  m_Text: Double Click to Use
 --- !u!222 &561921627
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6155,6 +6211,7 @@ GameObject:
   - component: {fileID: 629178226}
   - component: {fileID: 629178230}
   - component: {fileID: 629178231}
+  - component: {fileID: 629178232}
   m_Layer: 5
   m_Name: Text Slot 5
   m_TagString: Slot
@@ -6239,7 +6296,7 @@ MonoBehaviour:
   hover: 
   sendToInventory: {fileID: 1839654044}
   sendToDetectCollisions: {fileID: 1839654040}
-  drag: 0
+  tap: 0
 --- !u!114 &629178227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6305,7 +6362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88a88e48d16ba14994a6af28ecc92bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sendToMouseEvents: {fileID: 629178226}
+  sendToCraftingHandler: {fileID: 1839654047}
 --- !u!114 &629178231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6318,6 +6375,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f318aaa6bab924647b6eaeb9b9a7bcb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sendToCraftingHandler: {fileID: 1839654047}
+--- !u!225 &629178232
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629178222}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &632015194 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1895291820950270, guid: 645e0ccb96eef934aa12bd4c02a4bd66,
@@ -6838,6 +6908,7 @@ GameObject:
   - component: {fileID: 691541337}
   - component: {fileID: 691541341}
   - component: {fileID: 691541342}
+  - component: {fileID: 691541343}
   m_Layer: 5
   m_Name: Text Slot 8
   m_TagString: Slot
@@ -6922,7 +6993,7 @@ MonoBehaviour:
   hover: 
   sendToInventory: {fileID: 1839654044}
   sendToDetectCollisions: {fileID: 1839654040}
-  drag: 0
+  tap: 0
 --- !u!114 &691541338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6988,7 +7059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88a88e48d16ba14994a6af28ecc92bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sendToMouseEvents: {fileID: 691541337}
+  sendToCraftingHandler: {fileID: 1839654047}
 --- !u!114 &691541342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7001,6 +7072,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f318aaa6bab924647b6eaeb9b9a7bcb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sendToCraftingHandler: {fileID: 1839654047}
+--- !u!225 &691541343
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691541333}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &692194213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8769,6 +8853,7 @@ GameObject:
   - component: {fileID: 973324879}
   - component: {fileID: 973324883}
   - component: {fileID: 973324884}
+  - component: {fileID: 973324885}
   m_Layer: 5
   m_Name: Text Slot 7
   m_TagString: Slot
@@ -8853,7 +8938,7 @@ MonoBehaviour:
   hover: 
   sendToInventory: {fileID: 1839654044}
   sendToDetectCollisions: {fileID: 1839654040}
-  drag: 0
+  tap: 0
 --- !u!114 &973324880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8919,7 +9004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88a88e48d16ba14994a6af28ecc92bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sendToMouseEvents: {fileID: 973324879}
+  sendToCraftingHandler: {fileID: 1839654047}
 --- !u!114 &973324884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8932,6 +9017,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f318aaa6bab924647b6eaeb9b9a7bcb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sendToCraftingHandler: {fileID: 1839654047}
+--- !u!225 &973324885
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973324875}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!4 &985626650 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000013480976020, guid: 1bb5689aff5896c44a2c10801d1d1423,
@@ -11778,6 +11876,7 @@ GameObject:
   - component: {fileID: 1364738949}
   - component: {fileID: 1364738953}
   - component: {fileID: 1364738954}
+  - component: {fileID: 1364738955}
   m_Layer: 5
   m_Name: Text Slot 10
   m_TagString: Slot
@@ -11862,7 +11961,7 @@ MonoBehaviour:
   hover: 
   sendToInventory: {fileID: 1839654044}
   sendToDetectCollisions: {fileID: 1839654040}
-  drag: 0
+  tap: 0
 --- !u!114 &1364738950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11928,7 +12027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88a88e48d16ba14994a6af28ecc92bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sendToMouseEvents: {fileID: 1364738949}
+  sendToCraftingHandler: {fileID: 1839654047}
 --- !u!114 &1364738954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11941,6 +12040,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f318aaa6bab924647b6eaeb9b9a7bcb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sendToCraftingHandler: {fileID: 1839654047}
+--- !u!225 &1364738955
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364738945}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!4 &1366444304 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000013224114162, guid: 8859acd5a81cf7c499011be8fa88d940,
@@ -13029,6 +13141,7 @@ GameObject:
   - component: {fileID: 1571834710}
   - component: {fileID: 1571834711}
   - component: {fileID: 1571834712}
+  - component: {fileID: 1571834713}
   m_Layer: 5
   m_Name: Text Slot 1
   m_TagString: Slot
@@ -13113,7 +13226,7 @@ MonoBehaviour:
   hover: 
   sendToInventory: {fileID: 1839654044}
   sendToDetectCollisions: {fileID: 1839654040}
-  drag: 0
+  tap: 0
 --- !u!114 &1571834708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13179,7 +13292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88a88e48d16ba14994a6af28ecc92bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sendToMouseEvents: {fileID: 1571834707}
+  sendToCraftingHandler: {fileID: 1839654047}
 --- !u!114 &1571834712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13192,6 +13305,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f318aaa6bab924647b6eaeb9b9a7bcb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sendToCraftingHandler: {fileID: 1839654047}
+--- !u!225 &1571834713
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571834703}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &1582709162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13880,6 +14006,7 @@ GameObject:
   - component: {fileID: 1702831824}
   - component: {fileID: 1702831828}
   - component: {fileID: 1702831829}
+  - component: {fileID: 1702831830}
   m_Layer: 5
   m_Name: Text Slot 9
   m_TagString: Slot
@@ -13964,7 +14091,7 @@ MonoBehaviour:
   hover: 
   sendToInventory: {fileID: 1839654044}
   sendToDetectCollisions: {fileID: 1839654040}
-  drag: 0
+  tap: 0
 --- !u!114 &1702831825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14030,7 +14157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88a88e48d16ba14994a6af28ecc92bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sendToMouseEvents: {fileID: 1702831824}
+  sendToCraftingHandler: {fileID: 1839654047}
 --- !u!114 &1702831829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14043,6 +14170,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f318aaa6bab924647b6eaeb9b9a7bcb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sendToCraftingHandler: {fileID: 1839654047}
+--- !u!225 &1702831830
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702831820}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &1708293931
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15745,6 +15885,22 @@ MonoBehaviour:
   - {fileID: 691541335}
   - {fileID: 1702831822}
   - {fileID: 1364738947}
+--- !u!114 &1839654047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839654037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee4203decc4fe7847853a0f7d526ffe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  draggedItemText: 
+  draggedItem: {fileID: 0}
+  droppedOnText: 
+  droppedOn: {fileID: 0}
 --- !u!1001 &1841724096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16565,6 +16721,7 @@ GameObject:
   - component: {fileID: 1966369210}
   - component: {fileID: 1966369209}
   - component: {fileID: 1966369208}
+  - component: {fileID: 1966369211}
   m_Layer: 5
   m_Name: Slot Background
   m_TagString: Untagged
@@ -16663,6 +16820,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1966369206}
   m_CullTransparentMesh: 0
+--- !u!114 &1966369211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966369206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee4203decc4fe7847853a0f7d526ffe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  draggedItemText: 
+  draggedItem: {fileID: 0}
+  droppedOnText: 
+  droppedOn: {fileID: 0}
 --- !u!1 &1967537208 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000013327739928, guid: 8859acd5a81cf7c499011be8fa88d940,
