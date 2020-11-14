@@ -44,9 +44,6 @@ public class MouseEvents : MonoBehaviour
             //checks for a double click
             if(tap > 1)
             {
-                //resets the double cilck
-                tap = 0;
-
                 //Initializes pointer Data and bases it on mouse position
                 pointerData = new PointerEventData(gameEventSystem);
                 pointerData.position = Input.mousePosition;
@@ -76,6 +73,8 @@ public class MouseEvents : MonoBehaviour
                     
                     usedItem = null;
                 }
+                
+                tap = 0;
             }
         }
     }

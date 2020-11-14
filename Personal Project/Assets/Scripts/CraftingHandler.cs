@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class CraftingHandler : MonoBehaviour
 {
     //the Game object and the text of the dragged Item
@@ -21,6 +21,9 @@ public class CraftingHandler : MonoBehaviour
             draggedItemText = "";
             droppedOnText = "";
             Debug.Log("Correct Combination");
+            
+            draggedItem.GetComponent<Text>().text = "";
+            droppedOn.GetComponent<Text>().text = "Fishing Rod";
         }
 
         //if the combination of items is correct
@@ -29,6 +32,8 @@ public class CraftingHandler : MonoBehaviour
             draggedItemText = "";
             droppedOnText = "";
             
+            droppedOn.GetComponent<Text>().text = "Deciphered Note";
+
             Debug.Log("Correct Combination");
         }
     }

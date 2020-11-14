@@ -14,6 +14,8 @@ public class DetectCollisions : MonoBehaviour
 
    public Dialogue sendToDialogue;
 
+   public DecipheredNote sendToDecipheredNote;
+
     //Timer elements
    private int counter;
 
@@ -21,10 +23,11 @@ public class DetectCollisions : MonoBehaviour
 
    private float timer;
 
-    //infor from Mouse events
+    //info from Mouse events
    public bool clickEvent = false;
 
    public string usedItem;
+
 
    
 
@@ -81,6 +84,11 @@ public class DetectCollisions : MonoBehaviour
 
                 item = null;
                 puzzlePiece = null;
+            }
+
+            else if (usedItem == "Deciphered Note")
+            {
+               sendToDecipheredNote.openNote = true;
             }
 
             //otherwise send that the use of the item was bad to dialouge
