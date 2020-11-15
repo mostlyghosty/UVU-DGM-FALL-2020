@@ -15,11 +15,8 @@ public class MouseEvents : MonoBehaviour
     //item the ray hits
     public string usedItem;
 
-    public string hover;
-
-    //send info to inventory
+    //scripts
     public Inventory sendToInventory;
-
     public DetectCollisions sendToDetectCollisions;
 
     public int tap = 0;
@@ -35,7 +32,7 @@ public class MouseEvents : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             tap++;
 
@@ -44,6 +41,8 @@ public class MouseEvents : MonoBehaviour
             //checks for a double click
             if(tap > 1)
             {
+                tap = 0;
+
                 //Initializes pointer Data and bases it on mouse position
                 pointerData = new PointerEventData(gameEventSystem);
                 pointerData.position = Input.mousePosition;
@@ -73,8 +72,8 @@ public class MouseEvents : MonoBehaviour
                     
                     usedItem = null;
                 }
-                
-                tap = 0;
+
+                tap = 0; 
             }
         }
     }
