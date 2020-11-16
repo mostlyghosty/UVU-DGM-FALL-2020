@@ -60,7 +60,8 @@ public class Dialogue : MonoBehaviour
         {
             {"Strange Gem", "It makes pretty patterns when I look through it."},
             {"Spider Web", "It's... stringy."},
-            {"Altar", "The words changed! It says 'May the light of the altar guide your path.'"}
+            {"Altar", "The words changed! It says 'May the light of the altar guide your path.'"},
+            {"Cubes", "This is a test"}
         };
 
     // Start is called before the first frame update

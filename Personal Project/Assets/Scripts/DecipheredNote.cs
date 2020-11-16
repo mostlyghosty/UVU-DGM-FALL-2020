@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class DecipheredNote : MonoBehaviour
 {
     public Inventory sendToInventory;
-
+    public DetectCollisions sendToDetectCollisions;
     public bool openNote = false;
 
     public GameObject inventory;
@@ -34,6 +34,9 @@ public class DecipheredNote : MonoBehaviour
 
             //Opens Deciphered Note
             decipheredNote.SetActive(true);
+
+            //checks to see if player has reads the deciphered note and sends that info to detect Collisions
+            sendToDetectCollisions.decipheredNote = true;
         
         }
 

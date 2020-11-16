@@ -9,6 +9,9 @@ public class DetectCollisions : MonoBehaviour
    private GameObject puzzlePiece;
    public string item;
 
+   //glow block prefab
+   public GameObject glowBlock;
+
     //Scripts
    public Inventory sendToInventory;
 
@@ -28,8 +31,8 @@ public class DetectCollisions : MonoBehaviour
 
    public string usedItem;
 
+   public bool decipheredNote = false;
 
-   
 
     void Start ()
     {
@@ -84,6 +87,28 @@ public class DetectCollisions : MonoBehaviour
 
                 item = null;
                 puzzlePiece = null;
+            }
+
+            else if (item == "Cubes" && usedItem == "Strange Gem" && decipheredNote)
+            {
+                Debug.Log("Hooray!");
+
+                GameObject blockOne = GameObject.Find("Single Cube 10");
+                GameObject blockTwo = GameObject.Find("Single Cube 10 (1)");
+                GameObject blockThree = GameObject.Find("Single Cube 10 (2)");
+
+                Vector3 spawnPosOne = blockOne.transform.position;
+                Vector3 spawnPosTwo = blockTwo.transform.position;
+                Vector3 spawnPosThree = blockThree.transform.position;
+
+                Instantiate(glowBlock, spawnPosOne, glowBlock.transform.rotation);
+                Instantiate(glowBlock, spawnPosTwo, glowBlock.transform.rotation);
+                Instantiate(glowBlock, spawnPosThree, glowBlock.transform.rotation);
+
+                Destroy(blockOne);
+                Destroy(blockTwo);
+                Destroy(blockThree);
+
             }
 
             else if (usedItem == "Deciphered Note")

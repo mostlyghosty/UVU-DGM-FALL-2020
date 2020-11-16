@@ -470,19 +470,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 2.0000074, z: 2.0000072}
   m_Center: {x: -0.0000008940697, y: 1.3552527e-20, z: -0.000000059604645}
---- !u!65 &53858950
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 53858945}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 9.263419, y: 2.0000074, z: 4.4174724}
-  m_Center: {x: 0.06702857, y: -4.7392266e-14, z: 1.2087337}
 --- !u!1 &73372659 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000013296790728, guid: 03b0ed4871f8e8d46aab17cd9b867655,
@@ -2599,7 +2586,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013591645226, guid: e4b6dc71c54fb9546ab4675a4c0f3a56, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000013591645226, guid: e4b6dc71c54fb9546ab4675a4c0f3a56, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4308,7 +4295,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000013610429706, guid: e4b6dc71c54fb9546ab4675a4c0f3a56, type: 3}
       propertyPath: m_Name
-      value: Cubes
+      value: Single Cube 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013610429706, guid: e4b6dc71c54fb9546ab4675a4c0f3a56, type: 3}
+      propertyPath: m_TagString
+      value: Secondary Puzzle
       objectReference: {fileID: 0}
     - target: {fileID: 4000013591645226, guid: e4b6dc71c54fb9546ab4675a4c0f3a56, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4340,7 +4331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013591645226, guid: e4b6dc71c54fb9546ab4675a4c0f3a56, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4000013591645226, guid: e4b6dc71c54fb9546ab4675a4c0f3a56, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10945,7 +10936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013591645226, guid: e4b6dc71c54fb9546ab4675a4c0f3a56, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4000013591645226, guid: e4b6dc71c54fb9546ab4675a4c0f3a56, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -12702,6 +12693,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cab999ba165121a4e80d65aba7d499c2, type: 3}
+--- !u!1 &1425835624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1425835625}
+  - component: {fileID: 1425835626}
+  m_Layer: 0
+  m_Name: Cubes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1425835625
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425835624}
+  m_LocalRotation: {x: 0.0000018099951, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 8.115944, y: 1.5150247, z: 1.5028229}
+  m_LocalScale: {x: 1.4848, y: 1.4848, z: 1.4848}
+  m_Children: []
+  m_Father: {fileID: 1976732119}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1425835626
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425835624}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.897516, y: 2.7474189, z: 5.7636175}
+  m_Center: {x: 0.24067222, y: 0.10186308, z: 1.182867}
 --- !u!1 &1426527801 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000013326435574, guid: 1bb5689aff5896c44a2c10801d1d1423,
@@ -15990,11 +16025,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: 
+  glowBlock: {fileID: 1711602818317361752, guid: 5dd25a42f44fb944083073afb330c54b,
+    type: 3}
   sendToInventory: {fileID: 1839654044}
   sendToDialogue: {fileID: 1839654041}
   sendToDecipheredNote: {fileID: 1839654048}
   clickEvent: 0
   usedItem: 
+  decipheredNote: 0
 --- !u!114 &1839654041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16179,6 +16217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sendToInventory: {fileID: 1839654044}
+  sendToDetectCollisions: {fileID: 1839654040}
   openNote: 0
   inventory: {fileID: 1340010839}
   decipheredNote: {fileID: 1068739424}
@@ -17272,7 +17311,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1976732119}
   m_Layer: 0
-  m_Name: 'Block Puzzle '
+  m_Name: Stone Cubes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17289,6 +17328,7 @@ Transform:
   m_LocalPosition: {x: -24.415943, y: -0.075024605, z: -166.04282}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1425835625}
   - {fileID: 483322286}
   - {fileID: 1248294360}
   - {fileID: 324442032}
