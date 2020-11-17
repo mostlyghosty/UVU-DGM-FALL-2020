@@ -23,7 +23,7 @@ public class DragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginD
         //sends info about what is being dragged to the crafting handler
         sendToCraftingHandler.draggedItemText = GetComponent<Text>().text;
         sendToCraftingHandler.draggedItem = gameObject;
-
+        
         //Clears mouse clicks in mouse Events
         sendToMouseEvents.tap = 0;
     }

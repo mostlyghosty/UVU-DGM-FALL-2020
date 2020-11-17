@@ -69,7 +69,7 @@ public class TypeWriterEffect : MonoBehaviour
     void RandomSoundGenerator()
     {
         //chooses a random sound to play when a character is displayed
-        playerAudio.PlayOneShot(textClips[Random.Range(0, textClips.Length)], 0.1f);
+        playerAudio.PlayOneShot(textClips[Random.Range(0, textClips.Length)], 0.05f);
     }
 
     //clears Dialogue after 2 seconds

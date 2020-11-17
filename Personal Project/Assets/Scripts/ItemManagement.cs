@@ -16,6 +16,8 @@ public class ItemManagement : MonoBehaviour
 
    public GameObject particles;
 
+   public GameObject stoneCubes;
+
     //Scripts
    public Inventory sendToInventory;
 
@@ -37,6 +39,23 @@ public class ItemManagement : MonoBehaviour
 
    public bool decipheredNote = false;
 
+    // for Glow block puzzle
+    public bool oneCorrect;
+    public bool twoCorrect;
+
+    public bool solved = false;
+
+    //SFX
+    public AudioSource playerAudio;
+
+    public AudioClip click;
+
+    public AudioClip success;
+
+    public AudioClip failure;
+
+    public AudioClip paperSound;
+
 
     void Awake()
     {
@@ -54,6 +73,9 @@ public class ItemManagement : MonoBehaviour
     {
         //Initializes the counter for the slot array
         counter = 0;
+
+        //initializes the audio
+        playerAudio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -113,7 +135,7 @@ public class ItemManagement : MonoBehaviour
             else if (item == "Cubes" && usedItem == "Strange Gem" && decipheredNote)
             {
                 //deactivates the stone blacks and replaces them with glow blocks
-                GameObject.Find("Stone Cubes").SetActive(false);
+                stoneCubes.SetActive(false);
                 glowCubePuzzle.SetActive(true);
 
                 //Sends information about cubes to Dialogue
@@ -129,11 +151,12 @@ public class ItemManagement : MonoBehaviour
             //If you click on deciphered note, passes responsibility to decipherd note script
             else if (usedItem == "Deciphered Note")
             {
+                playerAudio.PlayOneShot(paperSound, 0.7f);
                sendToDecipheredNote.openNote = true;
             }
 
             //otherwise send that the use of the item was bad to dialouge
-            else 
+            else
             {
                 sendToDialogue.clickEvent = true;
                 sendToDialogue.badItem = true;
@@ -154,19 +177,104 @@ public class ItemManagement : MonoBehaviour
             puzzlePiece.SetActive(false);
 
             //moves to the next empty space in the slots array in the inventory script
-            counter ++;            
+            counter ++;  
+
+            //clears info about the collided with item because you never leave the collider, so puzzle can be set up
+            item = null;
+            puzzlePiece = null;          
         }
    
         //does not collect items, sends info to dialogue
-        else if(puzzlePiece != null && Input.GetKeyDown(KeyCode.E) && ready)
+        else if(puzzlePiece != null && Input.GetKeyDown(KeyCode.E) && ready && !puzzlePiece.gameObject.CompareTag("Cube"))
         {
             ready = false;
             //Sends information about the item to dialogue script
             sendToDialogue.setPiece = item;
+            sendToDialogue.puzzlePiece = puzzlePiece;
             sendToDialogue.ePress = true;
 
             StartCoroutine("SpamStopper");
         }
+
+
+        //if you interract with the glow cubes after reading the deciphered note and activating them
+        else if(puzzlePiece != null && Input.GetKeyDown(KeyCode.E) && puzzlePiece.gameObject.CompareTag("Cube") && !solved)
+        {
+            //initializes bool to tell if the players puzzle solving is going correctly
+            bool goodPuzzle = false;
+            
+            //if the player interracts with clow cube 0
+            if (item == "Glow Cube 0")
+            {
+                //clears item
+                item = null;
+
+                //lets script know puzzle is correct so far
+                goodPuzzle = true;
+                oneCorrect = true;
+
+                //plays confirmation noise
+                playerAudio.PlayOneShot(click, 1f);
+            }
+
+            //if the player interracts with Glow cube 2 and previously interracted with glow cube 0
+            if (oneCorrect && item == "Glow Cube 2")
+            {
+                //clears item
+                item = null;
+
+                //lets script know puzzle is correct so far
+                goodPuzzle = true;
+                twoCorrect = true;
+
+                //plays confirmation noise
+                playerAudio.PlayOneShot(click, 1f);
+            }
+
+            //if whole puzzle is correct
+            if (twoCorrect && item == "Glow Cube 1")
+            {
+                //the puzzle has been permanently solved
+                solved = true;
+
+                //clears item
+                item = null;
+
+                //lets the script know the puzzle is correct
+                goodPuzzle = true;
+
+                //playes success audio
+                playerAudio.PlayOneShot(success, 0.3f);
+
+                //Turns off the glow blocks and activates the altar
+                stoneCubes.SetActive(true);
+                glowCubePuzzle.SetActive(false);
+                activeLightOrb.SetActive(true);
+                particles.SetActive(true);
+
+                //sends info about the puzzle being solved to dialogue
+                sendToDialogue.ePress = true;
+                sendToDialogue.setPiece = "Puzzle Solved";
+                sendToDialogue.endGame = true;
+            }
+
+            //if the puzzle is not correct
+            if (!goodPuzzle)
+            {
+                //send the infor to dialogue
+                sendToDialogue.puzzlePiece = puzzlePiece;
+                sendToDialogue.ePress = true;
+                sendToDialogue.wrongOrder = true;
+
+                //clears puzzle progress
+                oneCorrect = false;
+                twoCorrect = false;
+
+                //plays failure audio
+                playerAudio.PlayOneShot(failure, 0.3f);
+            }
+        }
+
     }
 
     //If collision is entered sends the object collided with to an empty game object and gets the name and sends it to a text string

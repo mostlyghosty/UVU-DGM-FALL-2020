@@ -23,6 +23,8 @@ public class MouseEvents : MonoBehaviour
 
     public int tap = 0;
 
+    public bool crafted = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +45,7 @@ public class MouseEvents : MonoBehaviour
             //checks for a double click
             if(tap > 1)
             {
-                tap = 0;
+                StartCoroutine(ClearTaps());
 
                 //Initializes pointer Data and bases it on mouse position
                 pointerData = new PointerEventData(gameEventSystem);
@@ -61,8 +63,8 @@ public class MouseEvents : MonoBehaviour
                     usedItem = result.gameObject.GetComponent<Text>().text;
                 }
 
-                //Closes the inventory when an Item has been used and sends info to detect colisions
-                if (usedItem != null && usedItem != "")
+                //Closes the inventory when an Item has been used and sends info to item Management
+                if (usedItem != null && usedItem != "" && !crafted)
                 {
                     GameObject inventory = GameObject.Find("Inventory");
                     Time.timeScale = 1;
@@ -76,6 +78,17 @@ public class MouseEvents : MonoBehaviour
                     
                     usedItem = null;
                 }
+
+                else if (crafted)
+                {
+                    crafted = false;
+                }
+
+            }
+
+            if (tap > 2)
+            {
+                tap = 0;
             }
         }
     }

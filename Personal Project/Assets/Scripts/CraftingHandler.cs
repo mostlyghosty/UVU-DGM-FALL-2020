@@ -38,5 +38,10 @@ public class CraftingHandler : MonoBehaviour
             droppedOn.GetComponent<Text>().text = "Deciphered Note";
             draggedItem.GetComponent<Text>().text = "Strange Gem";
         }
+
+        else
+        {
+            droppedOnText = "";
+        }
     }
 }

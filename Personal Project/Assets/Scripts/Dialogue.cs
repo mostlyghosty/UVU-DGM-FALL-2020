@@ -14,6 +14,8 @@ public class Dialogue : MonoBehaviour
     public bool ePress = false;
     private bool startGame = true;
 
+    public bool wrongOrder = false;
+
     //SFX
     private AudioSource playerAudio;
 
@@ -30,6 +32,10 @@ public class Dialogue : MonoBehaviour
     public bool clickEvent = false;
 
     public bool badItem = false;
+
+    //track glow block puzzle solving
+    public bool puzzleSolved = false;
+    public bool endGame = false;
 
     //all the dialouge
     private static Dictionary<string, string> dialogue = new Dictionary<string, string>
@@ -49,7 +55,10 @@ public class Dialogue : MonoBehaviour
             {"Altar", "It says 'To leave the world you know far behind, light the altar in due time.'"},
             {"Cubes", "I was never one for stonework."},
             {"Secret", "It's a secret to everyone."},
-            {"Bad Item", "I can't use this here."}
+            {"Bad Item", "I can't use this here."},
+            {"Wrong Order", "That's not quite right."},
+            {"Puzzle Solved", "The Altar lit up!"}
+
         };
 
     //secondary dialogue for Item use
@@ -79,8 +88,16 @@ public class Dialogue : MonoBehaviour
             sendToTypeWriter.fullText = dialogue["Start"];
         }
 
+        //send end dialogue to type writer
+        else if (setPiece == "Altar" && endGame && ePress == true)
+        {
+            ePress = false;
+            sendToTypeWriter.textVar = true;
+            sendToTypeWriter.fullText = secondDialogue[setPiece];
+        }
+
         //if there was a click event sent from Detect Collisions
-        if (clickEvent == true)
+        else if (clickEvent == true)
         {
             //to clear loop
             clickEvent = false;
@@ -120,25 +137,40 @@ public class Dialogue : MonoBehaviour
         {   
             //to clear loop
             ePress = false;
-
-            //if it's meant to be picked up play the pickup sound
-            if (puzzlePiece != null && puzzlePiece.gameObject.CompareTag("Puzzle Piece"))
-            {
-                playerAudio.PlayOneShot(pickUp, 0.3f);
-            } 
             
-            //send dialogue about item to typewriter
-            sendToTypeWriter.textVar = true;
-            sendToTypeWriter.fullText = dialogue[setPiece];
+            //if the glow block puzzle is solved correctly
+            if (puzzleSolved)
+            {
+                //keeps this from looping
+                puzzleSolved = false;
+
+                //send dialogue about puzzle to typewriter
+                sendToTypeWriter.textVar = true;
+                sendToTypeWriter.fullText = dialogue[setPiece];
+            }
+
+            else if (!puzzlePiece.gameObject.CompareTag("Cube"))
+            {
+                //if it's meant to be picked up play the pickup sound
+                if (puzzlePiece != null && puzzlePiece.gameObject.CompareTag("Puzzle Piece"))
+                {
+                    playerAudio.PlayOneShot(pickUp, 0.3f);
+                } 
+            
+                //send dialogue about item to typewriter
+                sendToTypeWriter.textVar = true;
+                sendToTypeWriter.fullText = dialogue[setPiece];
+            }
+
+            else if (puzzlePiece.gameObject.CompareTag("Cube") && wrongOrder)
+            {
+                wrongOrder = false;
+                sendToTypeWriter.textVar = true;
+                sendToTypeWriter.fullText = dialogue["Wrong Order"];
+            }
+            
           
         }
-
-        //Once the time runs out reset everything
-       /* if(timer < 0)
-        {
-            dialogueBox.text = null;
-            timer = time;
-        }*/
 
     }
 

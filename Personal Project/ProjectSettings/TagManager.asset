@@ -8,6 +8,7 @@ TagManager:
   - Secondary Puzzle
   - Tertiary Puzzle
   - Slot
+  - Cube
   layers:
   - Default
   - TransparentFX
