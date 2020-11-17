@@ -8,6 +8,8 @@ public class DragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginD
     public CraftingHandler sendToCraftingHandler;
     private CanvasGroup canvasGroup;
 
+    public MouseEvents sendToMouseEvents;
+
     void Awake()
     {
         //initializes the canvas group on the slot
@@ -21,6 +23,9 @@ public class DragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginD
         //sends info about what is being dragged to the crafting handler
         sendToCraftingHandler.draggedItemText = GetComponent<Text>().text;
         sendToCraftingHandler.draggedItem = gameObject;
+
+        //Clears mouse clicks in mouse Events
+        sendToMouseEvents.tap = 0;
     }
     
     //When a UI inventory object is dragged it follows the mouse position

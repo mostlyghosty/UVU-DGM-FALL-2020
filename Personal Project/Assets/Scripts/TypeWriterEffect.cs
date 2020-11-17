@@ -22,10 +22,13 @@ public class TypeWriterEffect : MonoBehaviour
 
     private AudioSource playerAudio;
 
+    //The dialogue box
+    public Text dialogueBox;
+
     // Start is called before the first frame update
     void Start()
     {
-         playerAudio = GetComponent<AudioSource>();
+        playerAudio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -58,11 +61,21 @@ public class TypeWriterEffect : MonoBehaviour
             //must use IEnumerator function to use WaitForSeconds, sets delay between when characters show up
             yield return new WaitForSeconds(delay);
         }
+
+        //clears dialogue
+        StartCoroutine("ClearDialogue");
     }
 
     void RandomSoundGenerator()
     {
         //chooses a random sound to play when a character is displayed
         playerAudio.PlayOneShot(textClips[Random.Range(0, textClips.Length)], 0.1f);
+    }
+
+    //clears Dialogue after 2 seconds
+     IEnumerator ClearDialogue()
+    {
+        yield return new WaitForSecondsRealtime(2f);
+        dialogueBox.text = null;
     }
 }

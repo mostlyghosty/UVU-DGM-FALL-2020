@@ -6,40 +6,49 @@ using UnityEngine.EventSystems;
 
 public class DecipheredNote : MonoBehaviour
 {
+    //Send to Scripts
     public Inventory sendToInventory;
-    public DetectCollisions sendToDetectCollisions;
+    public ItemManagement sendToItemManagement;
+    public Footsteps sendToFootsteps;
+
+    //Recieved from scripts, chcks to see if player has opened the deciphered note
     public bool openNote = false;
 
+    //Game Objects in use in this script
     public GameObject inventory;
-
     public GameObject decipheredNote;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        //Makes sure the Deciphered note is not visible to player
         decipheredNote.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        //If the player has opened the Deciphered note
         if(openNote == true)
         {
             openNote = false;
 
             //closes inventory
-            Time.timeScale = 1;
             inventory.SetActive(false);
             sendToInventory.inventoryEnabled = false;
 
+            sendToFootsteps.inventoryOpen = true;
+
+
             //Opens Deciphered Note
             decipheredNote.SetActive(true);
+            Time.timeScale = 0;
 
             //checks to see if player has reads the deciphered note and sends that info to detect Collisions
-            sendToDetectCollisions.decipheredNote = true;
-        
+            sendToItemManagement.decipheredNote = true;
         }
 
+        //Closes the note
         if(Input.GetKeyDown(KeyCode.Tab))
         {
             decipheredNote.SetActive(false);

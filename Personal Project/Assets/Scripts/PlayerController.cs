@@ -4,27 +4,20 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //Input from user
     public float horizontalInput;
     public float forwardInput;
+
+    //variables to control turn speed and Move speed
     public int speed;
     public float turnSpeed;
     
+    //checks the rotation and angles of the player
     public float playerRotation;
 
     public float targetAngle;
 
     public float diffAngle;
-
-
-    //footsteps sound effects
-    private AudioSource playerAudio;
-    public AudioClip footStep;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        playerAudio = GetComponent<AudioSource>();
-    }
 
     // Update is called once per frame
     void Update()

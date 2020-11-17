@@ -11,6 +11,9 @@ public class Footsteps : MonoBehaviour
     //sfx
     public AudioSource footsteps;
 
+    //Recieves info from inventory
+    public bool inventoryOpen = false;
+
     // Update is called once per frame
     void Update()
     {
@@ -18,8 +21,8 @@ public class Footsteps : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         forwardInput = Input.GetAxis("Vertical");
 
-        //if input is detected
-        if (horizontalInput != 0 || forwardInput != 0)
+        //if input is detected and the inventory is not open
+        if ((horizontalInput != 0 || forwardInput != 0) && !inventoryOpen)
         {
             //and the audiosource is not already playing start the footsteps
             if(!GetComponent<AudioSource>().isPlaying)
@@ -28,10 +31,10 @@ public class Footsteps : MonoBehaviour
             }
         }
 
-        //otherwise stop the footsteps
-        else
+        //otherwise stop the footsteps (even if inventory is open)
+        else if ((horizontalInput == 0 && forwardInput == 0) || inventoryOpen)
         {
-             GetComponent<AudioSource>().Stop();
+            GetComponent<AudioSource>().Stop();
         }
     }
 }

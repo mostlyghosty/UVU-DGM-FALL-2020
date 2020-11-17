@@ -10,10 +10,6 @@ public class Dialogue : MonoBehaviour
     public Text dialogueBox;
     public GameObject puzzlePiece;
 
-    //Timer
-    private float time;
-    private float timer;
-
     //bools to set states
     public bool ePress = false;
     private bool startGame = true;
@@ -22,6 +18,8 @@ public class Dialogue : MonoBehaviour
     private AudioSource playerAudio;
 
     public AudioClip pickUp;
+
+    public AudioClip powerOn;
 
     //Send to typewriter behaviour
     public TypeWriterEffect sendToTypeWriter;
@@ -38,7 +36,7 @@ public class Dialogue : MonoBehaviour
         {
             {"Start", "If I don't want to be stuck in this temple forever, I'd better look for a way to escape."},
             {"Knife", "It's still as sharp as a ... well, a knife."},
-            {"Bone", "Dusty, just like I am"},
+            {"Bone", "Dusty, just like I am."},
             {"Ancient Note", "Hmm, all the pages in these books are blank, except one. I don't recognize the language though."},
             {"Strange Gem", "An, old well. There's something shiny at the bottom but I can't reach it with my stubby arms."},
             {"Spider Web", "It's too sticky to touch. I'll need something to cut it down with."},
@@ -46,7 +44,6 @@ public class Dialogue : MonoBehaviour
             {"Broken Boxes", "They'll fall apart if I touch them and I don't want splinters."},
             {"Table", "Just some old jars."},
             {"Bucket", "It's got too many holes in it to hold anything."},
-            {"Skulls", "Alas, poor Yorrick... or something like that anyway."},
             {"Crates", "Empty, empty, empty, and empty."},
             {"Sack", "Just sand in here."},
             {"Altar", "It says 'To leave the world you know far behind, light the altar in due time.'"},
@@ -58,34 +55,26 @@ public class Dialogue : MonoBehaviour
     //secondary dialogue for Item use
     private static Dictionary<string, string> secondDialogue = new Dictionary<string, string>
         {
-            {"Strange Gem", "It makes pretty patterns when I look through it."},
+            {"Strange Gem", "A gemstone! It makes pretty patterns when I look through it."},
             {"Spider Web", "It's... stringy."},
             {"Altar", "The words changed! It says 'May the light of the altar guide your path.'"},
-            {"Cubes", "This is a test"}
+            {"Cubes", "They're crackling with energy."}
         };
 
     // Start is called before the first frame update
     void Start()
     {
-        //Initializes the timer function
-        time = 5f;
-        timer = time;
-
         //initializes the player audio
         playerAudio = GetComponent<AudioSource>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
-
         //if the game is started send intro text to typewriter
         if(startGame)
         {
             startGame = false;
-            timer = time;
             sendToTypeWriter.textVar = true;
             sendToTypeWriter.fullText = dialogue["Start"];
         }
@@ -93,13 +82,25 @@ public class Dialogue : MonoBehaviour
         //if there was a click event sent from Detect Collisions
         if (clickEvent == true)
         {
+            //to clear loop
             clickEvent = false;
-            timer -= Time.deltaTime;
 
             //if the item use was good send dialogue to typewriter
-            if (setPiece != null && !badItem)
+            if (setPiece != null && setPiece != "Cubes" && !badItem)
             {
+                //Play pick up noise
                 playerAudio.PlayOneShot(pickUp, 0.3f);
+
+                sendToTypeWriter.textVar = true;
+                sendToTypeWriter.fullText = secondDialogue[setPiece];
+            }
+
+            //if the setpiec from a click event is cubes send dialogue to typewriter
+            if (setPiece == "Cubes")
+            {
+                //play electricity noise
+                playerAudio.PlayOneShot(powerOn, 0.3f);
+
                 sendToTypeWriter.textVar = true;
                 sendToTypeWriter.fullText = secondDialogue[setPiece];
             }
@@ -117,8 +118,8 @@ public class Dialogue : MonoBehaviour
         //if a set piece and an epress was sent over from Detect collisions
         else if(setPiece != null && ePress == true)
         {   
+            //to clear loop
             ePress = false;
-            timer = time;
 
             //if it's meant to be picked up play the pickup sound
             if (puzzlePiece != null && puzzlePiece.gameObject.CompareTag("Puzzle Piece"))
@@ -133,11 +134,11 @@ public class Dialogue : MonoBehaviour
         }
 
         //Once the time runs out reset everything
-        if(timer < 0)
+       /* if(timer < 0)
         {
             dialogueBox.text = null;
             timer = time;
-        }
+        }*/
 
     }
 

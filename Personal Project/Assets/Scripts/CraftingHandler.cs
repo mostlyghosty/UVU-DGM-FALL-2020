@@ -18,10 +18,11 @@ public class CraftingHandler : MonoBehaviour
         //if the combination of items is correct
         if ((draggedItemText == "Bone" && droppedOnText == "Spider Web") || (draggedItemText == "Spider Web" && droppedOnText == "Bone"))
         {
+            //clears text to exit the loop
             draggedItemText = "";
             droppedOnText = "";
-            Debug.Log("Correct Combination");
             
+            //changes text to appropriate combinations (crafts item)
             draggedItem.GetComponent<Text>().text = "";
             droppedOn.GetComponent<Text>().text = "Fishing Rod";
         }
@@ -29,12 +30,13 @@ public class CraftingHandler : MonoBehaviour
         //if the combination of items is correct
         if ((draggedItemText == "Strange Gem" && droppedOnText == "Ancient Note") || (draggedItemText == "Ancient Note" && droppedOnText == "Strange Gem"))
         {
+            //clears text to exit the loop
             draggedItemText = "";
             droppedOnText = "";
             
+            //changes text to appropriate combinations (crafts item)
             droppedOn.GetComponent<Text>().text = "Deciphered Note";
-
-            Debug.Log("Correct Combination");
+            draggedItem.GetComponent<Text>().text = "Strange Gem";
         }
     }
 }

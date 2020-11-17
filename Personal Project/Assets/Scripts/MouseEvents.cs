@@ -17,7 +17,9 @@ public class MouseEvents : MonoBehaviour
 
     //scripts
     public Inventory sendToInventory;
-    public DetectCollisions sendToDetectCollisions;
+    public ItemManagement sendToItemManagement;
+
+    public Footsteps sendToFootsteps;
 
     public int tap = 0;
 
@@ -67,13 +69,13 @@ public class MouseEvents : MonoBehaviour
                     inventory.SetActive(false);
                     sendToInventory.inventoryEnabled = false;
 
-                    sendToDetectCollisions.clickEvent = true;
-                    sendToDetectCollisions.usedItem = usedItem;
+                    sendToFootsteps.inventoryOpen = false;
+
+                    sendToItemManagement.clickEvent = true;
+                    sendToItemManagement.usedItem = usedItem;
                     
                     usedItem = null;
                 }
-
-                tap = 0; 
             }
         }
     }

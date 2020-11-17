@@ -6,9 +6,16 @@ using UnityEngine.EventSystems;
 
 public class Inventory : MonoBehaviour
 {
+    //Detects if the Inventory is enabled
     public bool inventoryEnabled = false;
+
+    //the inventory game object
     public GameObject inventory;
+
+    //recieves information from detect colisions to fill these slots
     public Text[] slots;
+
+    public Footsteps sendToFootsteps;
 
     void Awake()
     {
@@ -32,6 +39,9 @@ public class Inventory : MonoBehaviour
             //Time scale freezes time while the inventory is active so the player can't move
             if (inventoryEnabled == true )
             {
+                //to quiet footsteps
+                sendToFootsteps.inventoryOpen = true;
+
                 Time.timeScale = 0;
                 inventory.SetActive(true);
             }
@@ -39,6 +49,9 @@ public class Inventory : MonoBehaviour
             //Inventory closes and timescale resumes as normal
             else 
             {
+                //to play footsteps again
+                sendToFootsteps.inventoryOpen = false;
+
                 Time.timeScale = 1;
                 inventory.SetActive(false);
             }
