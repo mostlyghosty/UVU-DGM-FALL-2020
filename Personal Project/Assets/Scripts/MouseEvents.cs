@@ -18,11 +18,12 @@ public class MouseEvents : MonoBehaviour
     //scripts
     public Inventory sendToInventory;
     public ItemManagement sendToItemManagement;
-
     public Footsteps sendToFootsteps;
 
+    //number of clicks
     public int tap = 0;
 
+    //whether or not an item was trying to be crafted
     public bool crafted = false;
 
     // Start is called before the first frame update
@@ -45,6 +46,7 @@ public class MouseEvents : MonoBehaviour
             //checks for a double click
             if(tap > 1)
             {
+                //clears mouse clicks if not used quick enough
                 StartCoroutine(ClearTaps());
 
                 //Initializes pointer Data and bases it on mouse position
@@ -66,19 +68,23 @@ public class MouseEvents : MonoBehaviour
                 //Closes the inventory when an Item has been used and sends info to item Management
                 if (usedItem != null && usedItem != "" && !crafted)
                 {
+                    //closes inventory
                     GameObject inventory = GameObject.Find("Inventory");
                     Time.timeScale = 1;
                     inventory.SetActive(false);
                     sendToInventory.inventoryEnabled = false;
 
+                    //tells footsteps that the inventory is not open
                     sendToFootsteps.inventoryOpen = false;
 
                     sendToItemManagement.clickEvent = true;
                     sendToItemManagement.usedItem = usedItem;
                     
+                    //clears the used Item to close the loop
                     usedItem = null;
                 }
 
+                //if something is trying to be crafted DO NOT close the inventory
                 else if (crafted)
                 {
                     crafted = false;
@@ -86,6 +92,7 @@ public class MouseEvents : MonoBehaviour
 
             }
 
+            //if taps go above 2 clear them automatically (keeps extra clicks from being stored)
             if (tap > 2)
             {
                 tap = 0;

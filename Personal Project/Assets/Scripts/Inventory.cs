@@ -12,9 +12,8 @@ public class Inventory : MonoBehaviour
     //the inventory game object
     public GameObject inventory;
 
-    //recieves information from detect colisions to fill these slots
+    //recieves information from Item Mangager to fill these slots
     public Text[] slots;
-
     public Footsteps sendToFootsteps;
 
     void Awake()

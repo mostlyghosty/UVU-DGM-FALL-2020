@@ -19,7 +19,6 @@ public class TypeWriterEffect : MonoBehaviour
 
     //SFX
     public AudioClip[] textClips;
-
     private AudioSource playerAudio;
 
     //The dialogue box
@@ -28,6 +27,7 @@ public class TypeWriterEffect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //initializes player audio
         playerAudio = GetComponent<AudioSource>();
     }
 
@@ -52,7 +52,7 @@ public class TypeWriterEffect : MonoBehaviour
             //sets the text based on what is in current text
             this.GetComponent<Text>().text = currentText;
 
-            //once there is once character on the screen start the sound generator for each character that is displayed
+            //once there is one character on the screen start the sound generator for each character that is displayed
             if (i > 1)
             {
                 Invoke("RandomSoundGenerator", 0);
@@ -62,7 +62,7 @@ public class TypeWriterEffect : MonoBehaviour
             yield return new WaitForSeconds(delay);
         }
 
-        //clears dialogue
+        //clears dialogue after all text is displayed
         StartCoroutine("ClearDialogue");
     }
 

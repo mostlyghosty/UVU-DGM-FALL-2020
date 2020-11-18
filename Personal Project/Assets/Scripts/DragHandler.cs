@@ -5,10 +5,13 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 public class DragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
 {  
-    public CraftingHandler sendToCraftingHandler;
-    private CanvasGroup canvasGroup;
 
+    //scripts
+    public CraftingHandler sendToCraftingHandler;
     public MouseEvents sendToMouseEvents;
+
+    //canvas group you that raycast blocking can be turned off
+    private CanvasGroup canvasGroup;
 
     void Awake()
     {

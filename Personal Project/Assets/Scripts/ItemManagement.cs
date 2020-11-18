@@ -5,24 +5,19 @@ using UnityEngine.UI;
 
 public class ItemManagement : MonoBehaviour
 {
-    //The collided with item
+    //a collided with item
    private GameObject puzzlePiece;
    public string item;
 
-    //Game object for Glow Cube Puzzle and to activate the altar
+    //Game objects for Glow Cube Puzzle and to activate the altar
    public GameObject glowCubePuzzle;
-
    public GameObject activeLightOrb;
-
    public GameObject particles;
-
    public GameObject stoneCubes;
 
     //Scripts
    public Inventory sendToInventory;
-
    public Dialogue sendToDialogue;
-
    public DecipheredNote sendToDecipheredNote;
 
     //increment for slot array
@@ -34,26 +29,19 @@ public class ItemManagement : MonoBehaviour
 
     //info from Mouse events
    public bool clickEvent = false;
-
    public string usedItem;
-
    public bool decipheredNote = false;
 
     // for Glow block puzzle
     public bool oneCorrect;
     public bool twoCorrect;
-
     public bool solved = false;
 
     //SFX
     public AudioSource playerAudio;
-
     public AudioClip click;
-
     public AudioClip success;
-
     public AudioClip failure;
-
     public AudioClip paperSound;
 
 
@@ -81,7 +69,7 @@ public class ItemManagement : MonoBehaviour
     void Update()
     {
 
-        //when the Mouse events script detects a click and sends it to detect collisions
+        //when the Mouse events script detects a click and sends it over
         if (clickEvent)
         {
             //so the loop doesn't repeat infinitely
@@ -151,6 +139,7 @@ public class ItemManagement : MonoBehaviour
             //If you click on deciphered note, passes responsibility to decipherd note script
             else if (usedItem == "Deciphered Note")
             {
+                //plays paper sound
                 playerAudio.PlayOneShot(paperSound, 0.7f);
                sendToDecipheredNote.openNote = true;
             }
@@ -163,7 +152,7 @@ public class ItemManagement : MonoBehaviour
             }
         }
 
-        //if you are still near the object and e is pressed
+        //if you are still near an object and e is pressed and it's a collectible item
         if (puzzlePiece != null && Input.GetKeyDown(KeyCode.E) && puzzlePiece.gameObject.CompareTag("Puzzle Piece") )
         {
             //sends the object to the inventory script
@@ -174,6 +163,7 @@ public class ItemManagement : MonoBehaviour
             sendToDialogue.ePress = true;
             sendToDialogue.puzzlePiece = puzzlePiece;
 
+            //makes the collectible uniteractable
             puzzlePiece.SetActive(false);
 
             //moves to the next empty space in the slots array in the inventory script
@@ -184,7 +174,7 @@ public class ItemManagement : MonoBehaviour
             puzzlePiece = null;          
         }
    
-        //does not collect items, sends info to dialogue
+        //does not collect items, sends info to dialogue, checks to see if you're interracting with the glow cube puzzle
         else if(puzzlePiece != null && Input.GetKeyDown(KeyCode.E) && ready && !puzzlePiece.gameObject.CompareTag("Cube"))
         {
             ready = false;
@@ -193,6 +183,7 @@ public class ItemManagement : MonoBehaviour
             sendToDialogue.puzzlePiece = puzzlePiece;
             sendToDialogue.ePress = true;
 
+            //stops the user from spamming the 'E' key
             StartCoroutine("SpamStopper");
         }
 
@@ -214,7 +205,7 @@ public class ItemManagement : MonoBehaviour
                 oneCorrect = true;
 
                 //plays confirmation noise
-                playerAudio.PlayOneShot(click, 1f);
+                playerAudio.PlayOneShot(click, 1.5f);
             }
 
             //if the player interracts with Glow cube 2 and previously interracted with glow cube 0
@@ -228,7 +219,7 @@ public class ItemManagement : MonoBehaviour
                 twoCorrect = true;
 
                 //plays confirmation noise
-                playerAudio.PlayOneShot(click, 1f);
+                playerAudio.PlayOneShot(click, 1.5f);
             }
 
             //if whole puzzle is correct
@@ -261,7 +252,7 @@ public class ItemManagement : MonoBehaviour
             //if the puzzle is not correct
             if (!goodPuzzle)
             {
-                //send the infor to dialogue
+                //send the info to dialogue
                 sendToDialogue.puzzlePiece = puzzlePiece;
                 sendToDialogue.ePress = true;
                 sendToDialogue.wrongOrder = true;

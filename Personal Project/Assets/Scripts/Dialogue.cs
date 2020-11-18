@@ -13,14 +13,11 @@ public class Dialogue : MonoBehaviour
     //bools to set states
     public bool ePress = false;
     private bool startGame = true;
-
     public bool wrongOrder = false;
 
     //SFX
     private AudioSource playerAudio;
-
     public AudioClip pickUp;
-
     public AudioClip powerOn;
 
     //Send to typewriter behaviour
@@ -28,9 +25,7 @@ public class Dialogue : MonoBehaviour
     
     //track item usage
     public string itemUsed;
-
     public bool clickEvent = false;
-
     public bool badItem = false;
 
     //track glow block puzzle solving
@@ -112,7 +107,7 @@ public class Dialogue : MonoBehaviour
                 sendToTypeWriter.fullText = secondDialogue[setPiece];
             }
 
-            //if the setpiec from a click event is cubes send dialogue to typewriter
+            //if the set piece from a click event is cubes send dialogue to typewriter
             if (setPiece == "Cubes")
             {
                 //play electricity noise
@@ -132,7 +127,7 @@ public class Dialogue : MonoBehaviour
             
         }
 
-        //if a set piece and an epress was sent over from Detect collisions
+        //if a set piece and an epress was sent over from Item Manager
         else if(setPiece != null && ePress == true)
         {   
             //to clear loop
@@ -149,6 +144,7 @@ public class Dialogue : MonoBehaviour
                 sendToTypeWriter.fullText = dialogue[setPiece];
             }
 
+            //if it's not part of the glow puzzle
             else if (!puzzlePiece.gameObject.CompareTag("Cube"))
             {
                 //if it's meant to be picked up play the pickup sound
@@ -162,6 +158,7 @@ public class Dialogue : MonoBehaviour
                 sendToTypeWriter.fullText = dialogue[setPiece];
             }
 
+            //if its part of the glow puzzle and you solved it wrong
             else if (puzzlePiece.gameObject.CompareTag("Cube") && wrongOrder)
             {
                 wrongOrder = false;

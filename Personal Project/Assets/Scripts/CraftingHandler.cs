@@ -39,6 +39,7 @@ public class CraftingHandler : MonoBehaviour
             draggedItem.GetComponent<Text>().text = "Strange Gem";
         }
 
+        //clears the text to prevent it from being used on a different item accidentally
         else
         {
             droppedOnText = "";

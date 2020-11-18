@@ -31,12 +31,14 @@ public class DecipheredNote : MonoBehaviour
         //If the player has opened the Deciphered note
         if(openNote == true)
         {
+            //clears out of the loop
             openNote = false;
 
             //closes inventory
             inventory.SetActive(false);
             sendToInventory.inventoryEnabled = false;
 
+            //keeps footsteps from playing while inventory is open
             sendToFootsteps.inventoryOpen = true;
 
 
@@ -44,7 +46,7 @@ public class DecipheredNote : MonoBehaviour
             decipheredNote.SetActive(true);
             Time.timeScale = 0;
 
-            //checks to see if player has reads the deciphered note and sends that info to detect Collisions
+            //checks to see if player has reads the deciphered note and sends that info to Item Manager
             sendToItemManagement.decipheredNote = true;
         }
 
