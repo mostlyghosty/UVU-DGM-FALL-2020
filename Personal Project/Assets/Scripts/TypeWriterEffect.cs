@@ -24,6 +24,10 @@ public class TypeWriterEffect : MonoBehaviour
     //The dialogue box
     public Text dialogueBox;
 
+    public bool endGame;
+
+    public FadeToBlack sendToFadeToBlack;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -77,5 +81,11 @@ public class TypeWriterEffect : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(2f);
         dialogueBox.text = null;
+
+        if (endGame)
+        {
+            sendToFadeToBlack.endGame = true;
+        }
+        
     }
 }

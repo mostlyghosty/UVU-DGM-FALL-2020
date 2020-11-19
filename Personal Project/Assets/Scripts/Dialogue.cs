@@ -52,7 +52,7 @@ public class Dialogue : MonoBehaviour
             {"Secret", "It's a secret to everyone."},
             {"Bad Item", "I can't use this here."},
             {"Wrong Order", "That's not quite right."},
-            {"Puzzle Solved", "The Altar lit up!"}
+            {"Puzzle Solved", "The altar lit up!"}
 
         };
 
@@ -89,6 +89,8 @@ public class Dialogue : MonoBehaviour
             ePress = false;
             sendToTypeWriter.textVar = true;
             sendToTypeWriter.fullText = secondDialogue[setPiece];
+
+            sendToTypeWriter.endGame = true;
         }
 
         //if there was a click event sent from Detect Collisions

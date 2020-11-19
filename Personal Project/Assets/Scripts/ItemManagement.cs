@@ -246,6 +246,7 @@ public class ItemManagement : MonoBehaviour
                 //sends info about the puzzle being solved to dialogue
                 sendToDialogue.ePress = true;
                 sendToDialogue.setPiece = "Puzzle Solved";
+                sendToDialogue.puzzleSolved = true;
                 sendToDialogue.endGame = true;
             }
 
