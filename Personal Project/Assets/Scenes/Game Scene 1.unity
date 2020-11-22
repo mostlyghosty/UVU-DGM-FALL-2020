@@ -5881,7 +5881,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 08532c65f6cbbb94ca84fb2cf1042a2d, type: 3}
   dialogueBox: {fileID: 600860811}
   endGame: 0
-  sendToFadeToBlack: {fileID: 1925428299}
+  sendToFadeToBlack: {fileID: 1797755892}
 --- !u!82 &600860815
 AudioSource:
   m_ObjectHideFlags: 0
@@ -16078,6 +16078,9 @@ MonoBehaviour:
   blackSquare: {fileID: 1925428295}
   endGame: 0
   theEnd: {fileID: 509093964}
+  player: {fileID: 1839654037}
+  staticPlayer: {fileID: 7656786879765332736, guid: ca0cf865ea686e94e9fd90e8824c5df3,
+    type: 3}
 --- !u!1001 &1800995979
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16531,7 +16534,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 0.9191375, b: 0.6462264, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -17497,7 +17500,6 @@ GameObject:
   - component: {fileID: 1925428296}
   - component: {fileID: 1925428298}
   - component: {fileID: 1925428297}
-  - component: {fileID: 1925428299}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -17562,21 +17564,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1925428295}
   m_CullTransparentMesh: 0
---- !u!114 &1925428299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925428295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d70fa1154863994b8537b175ed6572d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blackSquare: {fileID: 1925428295}
-  endGame: 0
-  theEnd: {fileID: 509093964}
 --- !u!1 &1933031856
 GameObject:
   m_ObjectHideFlags: 0

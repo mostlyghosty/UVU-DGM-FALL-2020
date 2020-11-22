@@ -11,6 +11,9 @@ public class FadeToBlack : MonoBehaviour
     public GameObject theEnd;
     private bool fadeIn = false;
 
+    public GameObject player;
+    public GameObject staticPlayer;
+
     // Update is called once per frame
     void Update()
     {
@@ -30,6 +33,8 @@ public class FadeToBlack : MonoBehaviour
         //get the color of the square
         Color objectColor = blackSquare.GetComponent<Image>().color;
 
+        Color theEndColor = theEnd.GetComponent<Text>().color;
+
         //used to calculate how much black squares opacity will change each frame 
         float fadeAmount;
 
@@ -37,6 +42,14 @@ public class FadeToBlack : MonoBehaviour
 
         if(fadeOut)
         {
+            endGame = false;
+            
+            Vector3 playerPosition = player.transform.position;
+            Quaternion playerRotation = player.transform.rotation;
+            player.SetActive(false);
+
+            Instantiate(staticPlayer, playerPosition, playerRotation);
+
             //loop until black square is fully visible
             while (blackSquare.GetComponent<Image>().color.a < 1)
             {
@@ -52,30 +65,32 @@ public class FadeToBlack : MonoBehaviour
                 //halts everything until the while loop ends
                 yield return null;
             }
-            
+
             fadeIn = true;
         }
 
         if (!fadeOut)
         {
+            fadeIn = false;
+
             while (theEnd.GetComponent<Text>().color.a < 1)
             {
-                Debug.Log("In text while loop");
                 //adjust fade amount by alpha directly compare to time not frames
-                fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
+                fadeAmount = theEndColor.a + (fadeSpeed * Time.deltaTime);
 
-                Debug.Log("fade amount set");
                 //creates new color
-                objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
+                theEndColor = new Color(theEndColor.r, theEndColor.g, theEndColor.b, fadeAmount);
 
-                Debug.Log("Object Color set");
                 //and sets it to the black squares color
-                theEnd.GetComponent<Text>().color = objectColor;
+                theEnd.GetComponent<Text>().color = theEndColor;
 
-                Debug.Log("Text Color changed");
                 //halts everything until the while loop ends
                 yield return null;
             }
+
+            yield return new WaitForSeconds(10);
+
+            Application.Quit();
         }
     }
 }

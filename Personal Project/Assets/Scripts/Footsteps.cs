@@ -34,7 +34,7 @@ public class Footsteps : MonoBehaviour
         //otherwise stop the footsteps (even if inventory is open)
         else if ((horizontalInput == 0 && forwardInput == 0) || inventoryOpen)
         {
-            GetComponent<AudioSource>().Stop();
+                GetComponent<AudioSource>().Stop();
         }
     }
 }
