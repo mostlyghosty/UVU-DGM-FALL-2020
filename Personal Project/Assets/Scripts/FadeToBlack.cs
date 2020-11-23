@@ -23,7 +23,8 @@ public class FadeToBlack : MonoBehaviour
         }
 
         if (fadeIn)
-        {
+        {   
+            fadeIn = false;
             StartCoroutine(Fade(false, 1));
         }
     }
@@ -88,9 +89,15 @@ public class FadeToBlack : MonoBehaviour
                 yield return null;
             }
 
-            yield return new WaitForSeconds(10);
+           while (!Input.GetKeyDown(KeyCode.Escape))
+           {
+               yield return null;
+           }
 
-            Application.Quit();
+           if (Input.GetKeyDown(KeyCode.Escape))
+           {
+               Application.Quit();
+           }
         }
     }
 }

@@ -14,6 +14,7 @@ public class ItemManagement : MonoBehaviour
    public GameObject activeLightOrb;
    public GameObject particles;
    public GameObject stoneCubes;
+   public GameObject inactiveLightOrb;
 
     //Scripts
    public Inventory sendToInventory;
@@ -36,6 +37,7 @@ public class ItemManagement : MonoBehaviour
     public bool oneCorrect;
     public bool twoCorrect;
     public bool solved = false;
+    public GameObject strangeGem;
 
     //SFX
     public AudioSource playerAudio;
@@ -43,6 +45,8 @@ public class ItemManagement : MonoBehaviour
     public AudioClip success;
     public AudioClip failure;
     public AudioClip paperSound;
+
+    public GameObject skullsPrefab;
 
 
     void Awake()
@@ -131,6 +135,8 @@ public class ItemManagement : MonoBehaviour
                 sendToDialogue.puzzlePiece = puzzlePiece;
                 sendToDialogue.clickEvent = true;
 
+                strangeGem.GetComponent<Text>().text = "";
+
                 //clears info about the collided with item because you never leave the collider, so puzzle can be set up
                 item = null;
                 puzzlePiece = null;
@@ -141,7 +147,7 @@ public class ItemManagement : MonoBehaviour
             {
                 //plays paper sound
                 playerAudio.PlayOneShot(paperSound, 0.7f);
-               sendToDecipheredNote.openNote = true;
+                sendToDecipheredNote.openNote = true;
             }
 
             //otherwise send that the use of the item was bad to dialouge
@@ -169,9 +175,21 @@ public class ItemManagement : MonoBehaviour
             //moves to the next empty space in the slots array in the inventory script
             counter ++;  
 
+            if (item == "Bone")
+            {
+               GameObject skulls = GameObject.Find("Skulls");
+               Vector3 skullsposition = skulls.transform.position;
+               Quaternion skullsRotation = skulls.transform.rotation;
+
+               skulls.SetActive(false);
+               Instantiate(skullsPrefab, skullsposition, skullsRotation);
+            }   
+            
             //clears info about the collided with item because you never leave the collider, so puzzle can be set up
             item = null;
-            puzzlePiece = null;          
+            puzzlePiece = null;  
+
+            
         }
    
         //does not collect items, sends info to dialogue, checks to see if you're interracting with the glow cube puzzle
@@ -241,7 +259,9 @@ public class ItemManagement : MonoBehaviour
                 stoneCubes.SetActive(true);
                 glowCubePuzzle.SetActive(false);
                 activeLightOrb.SetActive(true);
+                inactiveLightOrb.SetActive(false);
                 particles.SetActive(true);
+                
 
                 //sends info about the puzzle being solved to dialogue
                 sendToDialogue.ePress = true;
@@ -288,7 +308,7 @@ public class ItemManagement : MonoBehaviour
     //waits for 2 seconds and the activates the "E" key again
     IEnumerator SpamStopper()
     {
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSecondsRealtime(3f);
         ready = true;
     }
 

@@ -15,10 +15,13 @@ public class MouseEvents : MonoBehaviour
     //item the ray hits
     public string usedItem;
 
+    private GameObject itemSlot;
+    
     //scripts
     public Inventory sendToInventory;
     public ItemManagement sendToItemManagement;
     public Footsteps sendToFootsteps;
+
 
     //number of clicks
     public int tap = 0;
@@ -63,11 +66,18 @@ public class MouseEvents : MonoBehaviour
                 foreach (RaycastResult result in results)
                 {
                     usedItem = result.gameObject.GetComponent<Text>().text;
+                    itemSlot = result.gameObject;
+
                 }
 
                 //Closes the inventory when an Item has been used and sends info to item Management
                 if (usedItem != null && usedItem != "" && !crafted)
                 {
+                    if (usedItem == "Strange Gem")
+                    {
+                        sendToItemManagement.strangeGem = itemSlot;
+                    }
+
                     //closes inventory
                     GameObject inventory = GameObject.Find("Inventory");
                     Time.timeScale = 1;

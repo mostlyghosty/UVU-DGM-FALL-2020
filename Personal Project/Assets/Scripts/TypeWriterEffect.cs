@@ -41,6 +41,8 @@ public class TypeWriterEffect : MonoBehaviour
         if (textVar)
         {
             textVar = false;
+            StopCoroutine(ShowText());
+            gameObject.GetComponent<Text>().text = "";
             StartCoroutine(ShowText ());
         }
     }
@@ -54,7 +56,7 @@ public class TypeWriterEffect : MonoBehaviour
             currentText = fullText.Substring(0,i);
 
             //sets the text based on what is in current text
-            this.GetComponent<Text>().text = currentText;
+            gameObject.GetComponent<Text>().text = currentText;
 
             //once there is one character on the screen start the sound generator for each character that is displayed
             if (i > 1)
