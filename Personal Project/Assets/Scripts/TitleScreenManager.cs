@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TitleScreenManager : MonoBehaviour
 {
@@ -9,27 +10,43 @@ public class TitleScreenManager : MonoBehaviour
     private bool startFade = true;
     private bool fadeStart = false;
 
+    public GameObject controls;
+
+    private bool controlActive = false;
+
+    private string gameScene = "Game Scene 1";
+
 
 
     void Start()
     {
-        //StartCoroutine(Fade());
+        controls.SetActive(false);
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if (startFade)
+        if (!controlActive)
         {
-            startFade = false;
-            StartCoroutine(Fade());
-        }
+            if (startFade)
+            {
+                startFade = false;
+                StartCoroutine(Fade());
+            }
 
-        if (fadeStart)
+            if (fadeStart)
+            {
+                fadeStart = false;
+                StartCoroutine(Fade(false));
+            }
+        }
+        
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-            fadeStart = false;
-            StartCoroutine(Fade(false));
+            controlActive = true;
+            StopCoroutine(Fade());
+            controls.SetActive(true);
         }
     }
 
@@ -89,5 +106,10 @@ public class TitleScreenManager : MonoBehaviour
 
             startFade = true;
         }
+    }
+
+    public void NewGame()
+    {
+        SceneManager.LoadScene(gameScene);
     }
 }

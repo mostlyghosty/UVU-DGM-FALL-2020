@@ -12,6 +12,8 @@ public class CraftingHandler : MonoBehaviour
     public string droppedOnText;
     public GameObject droppedOn;
 
+    private bool crafted = false;
+
     // Update is called once per frame
     void Update()
     {
@@ -28,7 +30,7 @@ public class CraftingHandler : MonoBehaviour
         }
 
         //if the combination of items is correct
-        if ((draggedItemText == "Strange Gem" && droppedOnText == "Ancient Note") || (draggedItemText == "Ancient Note" && droppedOnText == "Strange Gem"))
+        if (!crafted && ((draggedItemText == "Strange Gem" && droppedOnText == "Ancient Note") || (draggedItemText == "Ancient Note" && droppedOnText == "Strange Gem")))
         {
             //clears text to exit the loop
             draggedItemText = "";

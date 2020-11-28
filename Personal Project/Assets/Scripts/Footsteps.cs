@@ -8,15 +8,13 @@ public class Footsteps : MonoBehaviour
     public float horizontalInput;
     public float forwardInput;
 
-    //sfx
-    public AudioSource footsteps;
-
     //Recieves info from inventory
     public bool inventoryOpen = false;
 
     // Update is called once per frame
     void Update()
-    {
+    { 
+        
         //Initializes input
         horizontalInput = Input.GetAxis("Horizontal");
         forwardInput = Input.GetAxis("Vertical");
@@ -28,13 +26,16 @@ public class Footsteps : MonoBehaviour
             if(!GetComponent<AudioSource>().isPlaying)
             {
                 GetComponent<AudioSource>().Play();
-            }
+            } 
+        
         }
 
         //otherwise stop the footsteps (even if inventory is open)
         else if ((horizontalInput == 0 && forwardInput == 0) || inventoryOpen)
         {
-                GetComponent<AudioSource>().Stop();
+            GetComponent<AudioSource>().Stop();
         }
+        
+        
     }
 }

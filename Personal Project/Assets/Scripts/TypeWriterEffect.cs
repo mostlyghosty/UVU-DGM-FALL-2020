@@ -26,7 +26,7 @@ public class TypeWriterEffect : MonoBehaviour
 
     public bool endGame;
 
-    public FadeToBlack sendToFadeToBlack;
+    public EndGameManager sendToEndGameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -86,7 +86,7 @@ public class TypeWriterEffect : MonoBehaviour
 
         if (endGame)
         {
-            sendToFadeToBlack.endGame = true;
+            sendToEndGameManager.endGame = true;
         }
         
     }
