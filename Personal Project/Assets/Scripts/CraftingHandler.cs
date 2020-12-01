@@ -12,6 +12,7 @@ public class CraftingHandler : MonoBehaviour
     public string droppedOnText;
     public GameObject droppedOn;
 
+    //helps prevent crafting twice
     private bool crafted = false;
 
     // Update is called once per frame

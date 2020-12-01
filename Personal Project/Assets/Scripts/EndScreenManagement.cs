@@ -5,35 +5,32 @@ using UnityEngine.UI;
 
 public class EndScreenManagement : MonoBehaviour
 {
+    //the game object for "The end" Text
     public GameObject theEnd;
-    public bool fadeIn = true;
 
+    //the text for how to quit the game
     public GameObject instructions;
 
     // Update is called once per frame
-    void Update()
+    void start()
     {
-        if (fadeIn)
-        {   
-            fadeIn = false;
-            StartCoroutine(Fade(false, 1));
-        }
+        StartCoroutine(Fade(false, 1));  
     }
 
     public IEnumerator Fade(bool fadeOut = true, int fadeSpeed = 3)
     {
         
+        //initializes color for both game objects
         Color theEndColor = theEnd.GetComponent<Text>().color;
 
         Color instructionsColor = instructions.GetComponent<Text>().color;
 
-        //used to calculate how much black squares opacity will change each frame 
+        //used to calculate how much objects opacity will change each frame 
         float fadeAmount;
 
         if (!fadeOut)
         {
-            fadeIn = false;
-
+            //fades in "The end"
             while (theEnd.GetComponent<Text>().color.a < 1)
             {
                 //adjust fade amount by alpha directly compare to time not frames
@@ -49,8 +46,10 @@ public class EndScreenManagement : MonoBehaviour
                 yield return null;
             }
 
+            //wait for 5 seconds
             yield return new WaitForSecondsRealtime(5);
 
+            //fades in instructions to close game
             while (instructions.GetComponent<Text>().color.a < 1)
             {
                 //adjust fade amount by alpha directly compare to time not frames
@@ -66,11 +65,13 @@ public class EndScreenManagement : MonoBehaviour
                 yield return null;
             }
 
+            //Wait here while escape is not pressed
            while (!Input.GetKeyDown(KeyCode.Escape))
            {
                yield return null;
            }
 
+            //if escape is pressed quit the game
            if (Input.GetKeyDown(KeyCode.Escape))
            {
                Application.Quit();

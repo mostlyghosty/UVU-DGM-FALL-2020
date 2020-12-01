@@ -15,6 +15,7 @@ public class MouseEvents : MonoBehaviour
     //item the ray hits
     public string usedItem;
 
+    //holds the item slot game object that was clicked on
     private GameObject itemSlot;
     
     //scripts
@@ -66,6 +67,8 @@ public class MouseEvents : MonoBehaviour
                 foreach (RaycastResult result in results)
                 {
                     usedItem = result.gameObject.GetComponent<Text>().text;
+
+                    //and initializes item slot
                     itemSlot = result.gameObject;
 
                 }
@@ -73,6 +76,7 @@ public class MouseEvents : MonoBehaviour
                 //Closes the inventory when an Item has been used and sends info to item Management
                 if (usedItem != null && usedItem != "" && !crafted)
                 {
+                    //sneds info about the slot strage gem is on so that Item management can remove it from the inventory
                     if (usedItem == "Strange Gem")
                     {
                         sendToItemManagement.strangeGem = itemSlot;

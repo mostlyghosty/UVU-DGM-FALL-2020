@@ -6,17 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class EndGameManager : MonoBehaviour
 {
+    //the fade out trigger and object
     public GameObject blackSquare;
     public bool endGame;
 
+    //game objects to take away control from the player
     public GameObject player;
     public GameObject staticPlayer;
 
-    public EndScreenManagement sendToEndScreenManagement;
 
     // Update is called once per frame
     void Update()
     {
+        //If the end game has been triggered start the fade coroutine
         if (endGame)
         {
             StartCoroutine(Fade());
@@ -33,8 +35,10 @@ public class EndGameManager : MonoBehaviour
 
         if(fadeOut)
         {
+            //clears the loop
             endGame = false;
             
+            //sets a dummy player model so the user can't interract with anything
             Vector3 playerPosition = player.transform.position;
             Quaternion playerRotation = player.transform.rotation;
             player.SetActive(false);
@@ -57,6 +61,7 @@ public class EndGameManager : MonoBehaviour
                 yield return null;
             }
             
+            //loads the end screen
             SceneManager.LoadScene("EndtheGame");
 
         }

@@ -84,6 +84,7 @@ public class TypeWriterEffect : MonoBehaviour
         yield return new WaitForSecondsRealtime(2f);
         dialogueBox.text = null;
 
+        //if end game is triggered, after the text is cleared send that information to the endgame manager
         if (endGame)
         {
             sendToEndGameManager.endGame = true;

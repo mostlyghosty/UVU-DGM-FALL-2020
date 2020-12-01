@@ -46,6 +46,7 @@ public class ItemManagement : MonoBehaviour
     public AudioClip failure;
     public AudioClip paperSound;
 
+    //game object to swap out once bone has been picked up
     public GameObject skullsPrefab;
 
 
@@ -134,7 +135,8 @@ public class ItemManagement : MonoBehaviour
                 sendToDialogue.setPiece = item;
                 sendToDialogue.puzzlePiece = puzzlePiece;
                 sendToDialogue.clickEvent = true;
-
+                
+                //clears the strange gem from inventory
                 strangeGem.GetComponent<Text>().text = "";
 
                 //clears info about the collided with item because you never leave the collider, so puzzle can be set up
@@ -175,12 +177,15 @@ public class ItemManagement : MonoBehaviour
             //moves to the next empty space in the slots array in the inventory script
             counter ++;  
 
+            //if the player picks up the bone item
             if (item == "Bone")
             {
+                //get information about position of 'skulls'
                GameObject skulls = GameObject.Find("Skulls");
                Vector3 skullsposition = skulls.transform.position;
                Quaternion skullsRotation = skulls.transform.rotation;
 
+                //Instantiate new intteractable 'skulls' game object
                skulls.SetActive(false);
                Instantiate(skullsPrefab, skullsposition, skullsRotation);
             }   
