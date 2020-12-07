@@ -53,7 +53,11 @@ public class Dialogue : MonoBehaviour
             {"Bad Item", "I can't use this here."},
             {"Wrong Order", "That's not quite right."},
             {"Puzzle Solved", "The altar lit up!"},
-            {"Skulls(Clone)", "Alas poor Yorrick... or something like that."}
+            {"Skulls(Clone)", "Alas poor Yorrick... or something like that."},
+            {"Books(Clone)", "There's just a book shaped hole in the dust."},
+            {"Empty Well(Clone)", "It's dark and scary down there."},
+            {"Spiders(Clone)", "Sorry little spider friends."},
+            {"Vial(Clone)", "These aren't useful."}
 
         };
 

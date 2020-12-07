@@ -21,6 +21,8 @@ public class ItemManagement : MonoBehaviour
    public Dialogue sendToDialogue;
    public DecipheredNote sendToDecipheredNote;
 
+   public SpawnManager sendToSpawnManager;
+
     //increment for slot array
    private int counter;
 
@@ -45,9 +47,6 @@ public class ItemManagement : MonoBehaviour
     public AudioClip success;
     public AudioClip failure;
     public AudioClip paperSound;
-
-    //game object to swap out once bone has been picked up
-    public GameObject skullsPrefab;
 
 
     void Awake()
@@ -91,8 +90,7 @@ public class ItemManagement : MonoBehaviour
                 sendToDialogue.puzzlePiece = puzzlePiece;
                 sendToDialogue.clickEvent = true;
 
-                //Makes the item uninterractable
-                puzzlePiece.SetActive(false);
+                sendToSpawnManager.spawnReplace = item;
 
                 //moves to the next empty space in the slots array in the inventory script
                 counter ++;
@@ -113,8 +111,7 @@ public class ItemManagement : MonoBehaviour
                 sendToDialogue.puzzlePiece = puzzlePiece;
                 sendToDialogue.clickEvent = true;
 
-                //Makes the item uninterractable
-                puzzlePiece.SetActive(false);
+                sendToSpawnManager.spawnReplace = item;
 
                 //moves to the next empty space in the slots array in the inventory script
                 counter ++;
@@ -171,30 +168,14 @@ public class ItemManagement : MonoBehaviour
             sendToDialogue.ePress = true;
             sendToDialogue.puzzlePiece = puzzlePiece;
 
-            //makes the collectible uniteractable
-            puzzlePiece.SetActive(false);
+            sendToSpawnManager.spawnReplace = item;
 
             //moves to the next empty space in the slots array in the inventory script
             counter ++;  
 
-            //if the player picks up the bone item
-            if (item == "Bone")
-            {
-                //get information about position of 'skulls'
-               GameObject skulls = GameObject.Find("Skulls");
-               Vector3 skullsposition = skulls.transform.position;
-               Quaternion skullsRotation = skulls.transform.rotation;
-
-                //Instantiate new intteractable 'skulls' game object
-               skulls.SetActive(false);
-               Instantiate(skullsPrefab, skullsposition, skullsRotation);
-            }   
-            
             //clears info about the collided with item because you never leave the collider, so puzzle can be set up
             item = null;
             puzzlePiece = null;  
-
-            
         }
    
         //does not collect items, sends info to dialogue, checks to see if you're interracting with the glow cube puzzle

@@ -3444,7 +3444,6 @@ MonoBehaviour:
   horizontalInput: 0
   forwardInput: 0
   inventoryOpen: 0
-  endGame: 0
 --- !u!82 &358192835
 AudioSource:
   m_ObjectHideFlags: 0
@@ -16100,6 +16099,56 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f68c55851f485c240952b4b45648adda, type: 3}
+--- !u!1 &1794605781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1794605783}
+  - component: {fileID: 1794605782}
+  m_Layer: 0
+  m_Name: Spawn Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1794605782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794605781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73872870ec0e56b4b9ed3a103f8d0f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emptySpawns:
+  - {fileID: 5993166995138394459, guid: 98bf4ae27b0509e44bee83aa39f603f5, type: 3}
+  - {fileID: 4017339094073122651, guid: eeed605234ad2c541b7e283684f2fb85, type: 3}
+  - {fileID: 4958525708118679654, guid: de77f0846ac49c14ba3c686e918853a1, type: 3}
+  - {fileID: 4506704070039809212, guid: 58e0d9524f3091a45930272cec34cb13, type: 3}
+  - {fileID: 6882838536809441988, guid: 515b115f005311a4d93651fa05976eb1, type: 3}
+  spawnReplace: 
+--- !u!4 &1794605783
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794605781}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.972669, y: 0.501, z: -4.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1797694184
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16295,12 +16344,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blackSquare: {fileID: 1925428295}
   endGame: 0
-  theEnd: {fileID: 509093964}
-  instructions: {fileID: 695209061}
   player: {fileID: 1839654037}
   staticPlayer: {fileID: 7656786879765332736, guid: ca0cf865ea686e94e9fd90e8824c5df3,
     type: 3}
-  sendToFootsteps: {fileID: 358192834}
 --- !u!1001 &1800995979
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16880,6 +16926,7 @@ MonoBehaviour:
   sendToInventory: {fileID: 1839654044}
   sendToDialogue: {fileID: 1839654041}
   sendToDecipheredNote: {fileID: 1839654048}
+  sendToSpawnManager: {fileID: 1794605782}
   clickEvent: 0
   usedItem: 
   decipheredNote: 0
@@ -16892,8 +16939,6 @@ MonoBehaviour:
   success: {fileID: 8300000, guid: 79e6baad2fd414b82a6d49ce1568d2e5, type: 3}
   failure: {fileID: 8300000, guid: dc6614beca09347ec9b258f12d154bdd, type: 3}
   paperSound: {fileID: 8300000, guid: b44e07f8139186747a4712f3bf69f49b, type: 3}
-  skullsPrefab: {fileID: 5993166995138394459, guid: 98bf4ae27b0509e44bee83aa39f603f5,
-    type: 3}
 --- !u!114 &1839654041
 MonoBehaviour:
   m_ObjectHideFlags: 0
