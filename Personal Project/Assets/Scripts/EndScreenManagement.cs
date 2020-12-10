@@ -12,7 +12,7 @@ public class EndScreenManagement : MonoBehaviour
     public GameObject instructions;
 
     // Update is called once per frame
-    void start()
+    void Start()
     {
         StartCoroutine(Fade(false, 1));  
     }

@@ -470,7 +470,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theEnd: {fileID: 509093964}
-  fadeIn: 1
   instructions: {fileID: 695209061}
 --- !u!1 &1925428295
 GameObject:

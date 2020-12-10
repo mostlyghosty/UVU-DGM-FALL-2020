@@ -85,19 +85,18 @@ public class ItemManagement : MonoBehaviour
                 //sends the object to the inventory script
                 sendToInventory.slots[counter].text = item;
 
-                //Also sends information about the item to dialogue script
-                sendToDialogue.setPiece = item;
-                sendToDialogue.puzzlePiece = puzzlePiece;
+                //Sends information about the item to dialogue script
+                SendToDialogue();
                 sendToDialogue.clickEvent = true;
 
+                //starts spawn of new dialogue
                 sendToSpawnManager.spawnReplace = item;
 
                 //moves to the next empty space in the slots array in the inventory script
                 counter ++;
 
                 //clears info about the collided with item because you never leave the collider
-                item = null;
-                puzzlePiece = null;
+                ClearPuzzleInfo();
             }
 
             //if the fishing rod was used in the area of the strange gem pick up the strange gem and send info to dialogue
@@ -107,18 +106,17 @@ public class ItemManagement : MonoBehaviour
                 sendToInventory.slots[counter].text = item;
 
                 //Also sends information about the item to dialogue script
-                sendToDialogue.setPiece = item;
-                sendToDialogue.puzzlePiece = puzzlePiece;
+                SendToDialogue();
                 sendToDialogue.clickEvent = true;
 
+                //starts spawn of new dialogue
                 sendToSpawnManager.spawnReplace = item;
 
                 //moves to the next empty space in the slots array in the inventory script
                 counter ++;
 
                 //clears info about the collided with item because you never leave the collider
-                item = null;
-                puzzlePiece = null;
+                ClearPuzzleInfo();
             }
 
             //If you use the Strange gem to activate the cubes and you have read the deciphered note
@@ -127,18 +125,16 @@ public class ItemManagement : MonoBehaviour
                 //deactivates the stone blacks and replaces them with glow blocks
                 stoneCubes.SetActive(false);
                 glowCubePuzzle.SetActive(true);
-
+                
                 //Sends information about cubes to Dialogue
-                sendToDialogue.setPiece = item;
-                sendToDialogue.puzzlePiece = puzzlePiece;
+                SendToDialogue();
                 sendToDialogue.clickEvent = true;
                 
                 //clears the strange gem from inventory
                 strangeGem.GetComponent<Text>().text = "";
 
                 //clears info about the collided with item because you never leave the collider, so puzzle can be set up
-                item = null;
-                puzzlePiece = null;
+                ClearPuzzleInfo();
             }
 
             //If you click on deciphered note, passes responsibility to decipherd note script
@@ -164,27 +160,29 @@ public class ItemManagement : MonoBehaviour
             sendToInventory.slots[counter].text = item;
                 
             //Also sends information about the item to dialogue script
-            sendToDialogue.setPiece = item;
+            SendToDialogue();
+            
             sendToDialogue.ePress = true;
-            sendToDialogue.puzzlePiece = puzzlePiece;
 
+            //Starts spawn of new dialogue
             sendToSpawnManager.spawnReplace = item;
 
             //moves to the next empty space in the slots array in the inventory script
             counter ++;  
 
             //clears info about the collided with item because you never leave the collider, so puzzle can be set up
-            item = null;
-            puzzlePiece = null;  
+            ClearPuzzleInfo();  
         }
    
         //does not collect items, sends info to dialogue, checks to see if you're interracting with the glow cube puzzle
         else if(puzzlePiece != null && Input.GetKeyDown(KeyCode.E) && ready && !puzzlePiece.gameObject.CompareTag("Cube"))
         {
+            //Part of spam stopper
             ready = false;
+
             //Sends information about the item to dialogue script
-            sendToDialogue.setPiece = item;
-            sendToDialogue.puzzlePiece = puzzlePiece;
+            SendToDialogue();
+
             sendToDialogue.ePress = true;
 
             //stops the user from spamming the 'E' key
@@ -296,6 +294,18 @@ public class ItemManagement : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(3f);
         ready = true;
+    }
+
+    void SendToDialogue()
+    {
+        sendToDialogue.setPiece = item;
+        sendToDialogue.puzzlePiece = puzzlePiece;
+    }
+
+    void ClearPuzzleInfo()
+    {
+        item = null;
+        puzzlePiece = null;
     }
 
 
